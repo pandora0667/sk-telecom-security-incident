@@ -1214,7 +1214,7 @@ export default function AnalysisPage() {
                             LTE 네트워크 구조
                           </h5>
                           <ImageViewer 
-                            src="/images/analysis/skt-lte-network-architecture.png.jpg"
+                            src="/images/analysis/skt-lte-network-architecture.jpg"
                             alt="SK텔레콤 LTE 네트워크 아키텍처"
                             caption="SK텔레콤 LTE 네트워크 구조"
                           />
