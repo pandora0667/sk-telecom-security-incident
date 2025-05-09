@@ -1,36 +1,57 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# SK 텔레콤 유심(SIM/eSIM) 해킹 분석 웹사이트
 
-## Getting Started
+2023년 4월 발생한 SK텔레콤 유심 해킹 사태에 대한 기술적 분석과 대응 방안을 제공하는 웹사이트입니다. 이 프로젝트는 보안 취약점, 해킹 방식, 그리고 이에 대한 대응책을 이해하기 쉽게 설명하는 것을 목표로 합니다.
 
-First, run the development server:
+## 프로젝트 소개
+
+이 웹사이트는 SK텔레콤 유심 해킹 사태의 다음 측면을 분석합니다:
+
+- **BPFDoor 분석**: 공격에 사용된 백도어 악성코드의 작동 원리
+- **해킹 타임라인**: 사건의 시간대별 전개 과정
+- **네트워크 분석**: SK텔레콤 통신망 침투 과정
+- **대응 방안**: 사용자와 기업이 취할 수 있는 보안 조치
+- **유사 사례**: 국내외 통신사 해킹 사례 비교 분석
+
+## 주요 기능
+
+- 📊 **다이어그램 시각화**: BPFDoor 악성코드의 작동 원리와 네트워크 침투 경로를 대화형 다이어그램으로 표현
+- 📅 **사건 타임라인**: 사건 발생부터 현재까지의 진행 상황 시각화
+- 📝 **기술 분석**: 해킹 수법에 대한 자세한 기술 분석 및 설명
+- 💡 **보안 가이드**: 일반 사용자를 위한 보안 강화 방법 제시
+
+## 기술 스택
+
+이 프로젝트는 다음 기술을 사용하여 개발되었습니다:
+
+- [Next.js](https://nextjs.org) - React 프레임워크
+- [React Flow](https://reactflow.dev) - 대화형 다이어그램 구현
+- [TypeScript](https://www.typescriptlang.org) - 타입 안정성
+- [Tailwind CSS](https://tailwindcss.com) - 스타일링
+
+## 개발 환경 설정
+
+먼저, 개발 서버를 실행합니다:
 
 ```bash
 npm run dev
-# or
+# 또는
 yarn dev
-# or
+# 또는
 pnpm dev
-# or
+# 또는
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+브라우저에서 [http://localhost:3000](http://localhost:3000)을 열어 결과를 확인하세요.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 라이센스
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+이 프로젝트는 [MIT 라이센스](LICENSE)에 따라 배포됩니다.
 
-## Learn More
+## 기여
 
-To learn more about Next.js, take a look at the following resources:
+이슈나 개선사항은 GitHub 이슈를 통해 제안해주세요. 풀 리퀘스트도 환영합니다.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 면책 조항
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+이 웹사이트는 교육 및 정보 제공 목적으로 제작되었으며, 모든 내용은 공개된 자료와 보안 전문가들의 분석을 기반으로 합니다. 공식적인 조사 결과와 다를 수 있으며, 최신 정보를 반영하여 지속적으로 업데이트됩니다.
