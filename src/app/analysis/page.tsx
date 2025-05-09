@@ -8,6 +8,7 @@ import { Footer } from "@/components/layout/Footer";
 import BPFDoorDiagram from "./BPFDoorDiagram";
 import BPFDoorSource from "./BPFDoorSource";
 import { useState } from "react";
+import ImageViewer from "@/components/ui/image-viewer";
 
 // 애니메이션 변수
 const staggerContainer = {
@@ -1212,29 +1213,21 @@ export default function AnalysisPage() {
                           <h5 className="text-sm font-medium text-gray-700 mb-2">
                             LTE 네트워크 구조
                           </h5>
-                          <div className="flex justify-center">
-                            <Image
-                              src="/images/analysis/skt-lte-network-architecture.png.jpg"
-                              alt="SK텔레콤 LTE 네트워크 아키텍처"
-                              width={650}
-                              height={400}
-                              className="border border-slate-300 rounded-md shadow-sm"
-                            />
-                          </div>
+                          <ImageViewer 
+                            src="/images/analysis/skt-lte-network-architecture.png.jpg"
+                            alt="SK텔레콤 LTE 네트워크 아키텍처"
+                            caption="SK텔레콤 LTE 네트워크 구조"
+                          />
                         </div>
                         <div>
                           <h5 className="text-sm font-medium text-gray-700 mb-2">
                             5G 네트워크 구조
                           </h5>
-                          <div className="flex justify-center">
-                            <Image
-                              src="/images/analysis/skt-5g-network-architecture.gif"
-                              alt="SK텔레콤 5G 네트워크 아키텍처"
-                              width={650}
-                              height={400}
-                              className="border border-slate-300 rounded-md shadow-sm"
-                            />
-                          </div>
+                          <ImageViewer 
+                            src="/images/analysis/skt-5g-network-architecture.gif"
+                            alt="SK텔레콤 5G 네트워크 아키텍처"
+                            caption="SK텔레콤 5G 네트워크 구조"
+                          />
                         </div>
                         <div className="text-xs text-right text-gray-500 mt-1">
                           출처: 넷마니아즈(Netmanias) - SK Telecom Network
