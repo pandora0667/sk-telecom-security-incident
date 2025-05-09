@@ -122,7 +122,7 @@ export default function FAQPage() {
                     SK텔레콤 고객센터
                   </h3>
                   <p className="text-gray-700 mb-2">
-                    전화: 114 또는 080-816-2000 (무료)
+                    전화: SKT 사용자 114 또는 080-816-2000 (무료)
                   </p>
                   <p className="text-gray-700">
                     운영시간: 평일 9:00 ~ 18:00
