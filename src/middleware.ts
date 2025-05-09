@@ -13,7 +13,7 @@ export function middleware() {
     img-src 'self' data: https://www.googletagmanager.com https://www.google-analytics.com https://bam.nr-data.net;
     font-src 'self';
     connect-src 'self' https://www.google-analytics.com https://bam.nr-data.net;
-    frame-src 'self';
+    frame-src 'self' https://www.youtube.com;
     object-src 'none';
   `.replace(/\s{2,}/g, ' ').trim();
 
