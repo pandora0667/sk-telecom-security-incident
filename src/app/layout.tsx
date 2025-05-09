@@ -45,6 +45,20 @@ export default function RootLayout({
         <meta httpEquiv="x-dns-prefetch-control" content="off" />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.svg" />
+        <script
+          type="text/javascript"
+          dangerouslySetInnerHTML={{
+            __html: `
+;window.NREUM||(NREUM={});NREUM.init={session_replay:{enabled:true,block_selector:'',mask_text_selector:'*',sampling_rate:10.0,error_sampling_rate:100.0,mask_all_inputs:true,collect_fonts:true,inline_images:false,inline_stylesheet:true,fix_stylesheets:true,preload:false,mask_input_options:{}},distributed_tracing:{enabled:true},privacy:{cookies_enabled:true},ajax:{deny_list:["bam.nr-data.net"]}};
+
+;NREUM.loader_config={accountID:"4536734",trustKey:"4536734",agentID:"1120402881",licenseKey:"NRJS-6cdc040ea0dfc518637",applicationID:"1120402881"};
+;NREUM.info={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",licenseKey:"NRJS-6cdc040ea0dfc518637",applicationID:"1120402881",sa:1};
+`,
+          }}
+        />
+        <script
+          src="https://js-agent.newrelic.com/nr-loader-spa-1.290.0.min.js"
+        ></script>
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         {/* Google Analytics 태그 */}
