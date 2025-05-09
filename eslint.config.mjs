@@ -10,6 +10,14 @@ const compat = new FlatCompat({
 });
 
 const eslintConfig = [
+  {
+    ignores: [
+      ".*", 
+      ".*/", 
+      "**/._*",
+      "./src/app/analysis/BPFDoorDiagram.tsx"
+    ]
+  },
   ...compat.extends("next/core-web-vitals", "next/typescript"),
 ];
 
