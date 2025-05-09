@@ -87,12 +87,12 @@ export function Header() {
         </div>
         
         {/* 네비게이션 - 데스크탑 (오른쪽 정렬) */}
-        <nav className="hidden md:flex flex-1 justify-end gap-2 lg:gap-4 text-sm lg:text-base font-medium overflow-x-auto whitespace-nowrap">
+        <nav className="hidden md:flex flex-1 justify-end gap-1 lg:gap-4 text-xs lg:text-base font-medium overflow-x-auto scrollbar-hide whitespace-nowrap">
           {navItems.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className={`relative px-2 py-1 font-medium transition-colors
+              className={`relative px-1.5 lg:px-2 py-1 font-medium transition-colors
                 hover:text-fuchsia-700
                 ${pathname === item.href ? 'text-fuchsia-700' : 'text-muted-foreground'}
               `}

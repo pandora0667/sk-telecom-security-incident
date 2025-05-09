@@ -152,7 +152,7 @@ export default function TimelinePage() {
 
             <h1 className="text-4xl font-bold text-blue-900 mb-2">SK텔레콤 유심 해킹 사건 전체 타임라인</h1>
             <p className="text-lg text-muted-foreground mb-8">
-              2025년 4월 18일 발생한 SK텔레콤 유심 해킹 사건의 시간순 상세 내역입니다. 최초 발견부터 현재까지의 진행 상황과 대응 조치를 확인하세요.
+              2025년 4월 18일 발생한 SK텔레콤 유심 해킹 사건의 시간순 상세 내역입니다. 현재까지의 진행 상황과 대응 조치를 확인하세요.
             </p>
 
             <div className="mb-8 p-6 bg-blue-50 rounded-xl border border-blue-100">
@@ -170,12 +170,12 @@ export default function TimelinePage() {
 
           <motion.div variants={fadeInUp} className="mb-8">
             <Tabs defaultValue="all" className="w-full">
-              <div className="mb-6 overflow-x-auto pb-2">
-                <TabsList className="flex w-auto gap-3 p-1.5">
+              <div className="mb-6 overflow-x-auto scrollbar-hide pb-2 -mx-4 px-4">
+                <TabsList className="flex w-max min-w-full gap-1.5">
                   <TabsTrigger 
                     value="all" 
                     onClick={() => setActiveCategory("all")}
-                    className="min-w-max px-5 py-2"
+                    className="min-w-max px-2 py-1.5 text-xs sm:text-sm sm:px-3 sm:py-1.5"
                   >
                     전체 ({timelineData.length})
                   </TabsTrigger>
@@ -185,7 +185,7 @@ export default function TimelinePage() {
                       key={category} 
                       value={category}
                       onClick={() => setActiveCategory(category)}
-                      className={`min-w-max px-5 py-2 mx-1 ${getCategoryColor(category)}`}
+                      className={`min-w-max px-2 py-1.5 text-xs sm:text-sm sm:px-3 sm:py-1.5 mx-0 sm:mx-0.5 ${getCategoryColor(category)}`}
                     >
                       {getCategoryLabel(category)} ({timelineData.filter(e => e.category === category).length})
                     </TabsTrigger>
