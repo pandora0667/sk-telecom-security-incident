@@ -9,4 +9,4 @@ const nextConfig = {
   // CSP는 미들웨어에서 관리하므로 여기서는 제거
 };
 
-module.exports = nextConfig; 
+export default nextConfig; 
