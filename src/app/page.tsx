@@ -817,14 +817,6 @@ export default function Home() {
               <p className="text-xs text-slate-600 flex-1 leading-relaxed">SK텔레콤 해킹 사례를 통해 디지털 보안의 중요성과 기업의 사회적 책임에 대한 교훈을 분석한 칼럼입니다.</p>
             </a>
           </div>
-
-          <div
-            className="mt-10 text-xs text-slate-500 text-center"
-          >
-            본 웹사이트는 교육 및 정보 제공 목적으로 제작되었으며, 상기 출처의 기사 및 자료를 참고하였습니다.
-            <br />
-            © 2025 SK텔레콤 유심 해킹 사태 분석 프로젝트
-        </div>
       </div>
       </section>
       
