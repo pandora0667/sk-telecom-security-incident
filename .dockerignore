@@ -58,4 +58,13 @@ coverage
 *.log
 *.md
 !README.md
-LICENSE 
+LICENSE
+
+# macOS 메타데이터 파일만 정확히 지정
+**/.DS_Store
+**/._.DS_Store
+**/._.*
+# public/images/analysis/ 아래의 메타데이터 파일만 제외하고 실제 이미지는 포함
+!public/images/analysis/*.png
+!public/images/analysis/*.jpg
+!public/images/analysis/*.gif 
