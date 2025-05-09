@@ -65,11 +65,11 @@ export function Header() {
 
   return (
     <header className="w-full flex justify-center py-4 bg-transparent">
-      <div className="w-full max-w-6xl rounded-2xl shadow-lg bg-white flex items-center px-6 py-2 gap-4 relative">
+      <div className="w-full max-w-6xl rounded-2xl shadow-lg bg-white flex flex-wrap items-center px-6 py-2 gap-4 relative">
         {/* 로고/타이틀 */}
         <div className="flex-shrink-0 flex items-center gap-3">
           <Link href="/">
-            <div className="relative w-10 h-10 flex items-center justify-center">
+            <div className="relative w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center">
               <Image 
                 src="/skt-logo/BI_T.png" 
                 alt="SK텔레콤 T 로고" 
@@ -81,13 +81,13 @@ export function Header() {
               />
             </div>
           </Link>
-          <Link href="/" className="font-extrabold text-lg md:text-xl text-primary">
-            SK텔레콤 유심 해킹 사건 분석
+          <Link href="/" className="font-extrabold text-sm sm:text-lg md:text-xl text-primary truncate">
+            <span className="inline-block max-w-[180px] sm:max-w-none truncate">SK텔레콤 유심 해킹 사건 분석</span>
           </Link>
         </div>
         
         {/* 네비게이션 - 데스크탑 (오른쪽 정렬) */}
-        <nav className="hidden md:flex flex-1 justify-end gap-4 text-base font-medium whitespace-nowrap">
+        <nav className="hidden md:flex flex-1 justify-end gap-2 lg:gap-4 text-sm lg:text-base font-medium overflow-x-auto whitespace-nowrap">
           {navItems.map((item) => (
             <Link
               key={item.href}

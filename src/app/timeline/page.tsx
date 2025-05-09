@@ -212,13 +212,13 @@ export default function TimelinePage() {
                 {/* 날짜 표시 - 모바일에서는 위에, 태블릿/데스크탑에서는 왼쪽에 */}
                 <motion.div 
                   variants={fadeInUp}
-                  className="bg-gradient-to-r from-blue-500 to-fuchsia-500 text-white py-1.5 px-4 mb-6 font-semibold inline-block rounded-lg shadow-md text-sm md:text-base absolute left-0 md:left-0 lg:-left-24 top-0 md:top-0 z-10"
+                  className="bg-gradient-to-r from-blue-500 to-fuchsia-500 text-white py-1.5 px-4 mb-6 font-semibold inline-block rounded-lg shadow-md text-sm md:text-base absolute left-12 md:left-0 lg:-left-24 top-0 md:top-0 z-20"
                 >
                   {date.replace(/\./g, '-')}
                 </motion.div>
 
                 {/* 날짜별 이벤트 그룹 */}
-                <div className="pl-12 md:pl-40 space-y-6 mt-14 md:mt-0">
+                <div className="pl-12 md:pl-40 space-y-6 mt-16 md:mt-0">
                   {groupedByDate[date].map((event, eventIndex) => (
                     <motion.div 
                       key={`${date}-${eventIndex}`}

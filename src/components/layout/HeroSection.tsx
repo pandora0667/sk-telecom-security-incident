@@ -21,7 +21,7 @@ export function HeroSection() {
           </defs>
         </svg>
       </motion.div>
-      <div className="relative z-10 flex flex-col items-center text-center w-full max-w-2xl mx-auto">
+      <div className="relative z-10 flex flex-col items-center text-center w-full max-w-2xl mx-auto px-4">
         <motion.span 
           className="mb-4 flex items-center gap-2 px-4 py-1 rounded-full bg-primary/10 text-primary font-medium text-sm shadow-sm mx-auto"
           initial={{ opacity: 0, y: -20 }}
@@ -32,20 +32,20 @@ export function HeroSection() {
           SKT 유심 해킹 사건
         </motion.span>
         <motion.h1 
-          className="text-4xl md:text-6xl font-extrabold text-center tracking-tight mb-4 bg-gradient-to-r from-blue-700 via-purple-600 to-fuchsia-500 text-transparent bg-clip-text drop-shadow-lg whitespace-nowrap"
+          className="text-3xl sm:text-4xl md:text-6xl font-extrabold text-center tracking-tight mb-4 bg-gradient-to-r from-blue-700 via-purple-600 to-fuchsia-500 text-transparent bg-clip-text drop-shadow-lg"
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
-          SK텔레콤 유심 해킹 사건 종합 분석
+          SK텔레콤 유심 해킹 사건<br className="hidden xs:block sm:hidden" /> 종합 분석
         </motion.h1>
         <motion.p 
-          className="text-lg md:text-2xl text-center text-muted-foreground max-w-2xl mb-6 mx-auto"
+          className="text-base sm:text-lg md:text-2xl text-center text-muted-foreground max-w-2xl mb-6 mx-auto"
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.6 }}
         >
-          전세계적으로 전례없는 대규모 유심 해킹 사건의 핵심 요약과 분석
+          전세계적으로 전례없는 대규모 유심 해킹 사건의<br className="hidden xs:block sm:hidden" /> 핵심 요약과 분석
         </motion.p>
         <motion.div 
           className="flex gap-2 justify-center"
