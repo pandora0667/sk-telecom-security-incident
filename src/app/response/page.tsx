@@ -1026,6 +1026,117 @@ export default function ResponsePage() {
                     <p className="text-sm text-slate-500 text-center">
                        물리적 SIM과 eSIM 비교 (출처: <a href="https://r1.community.samsung.com/t5/%EC%86%90%EC%89%AC%EC%9A%B4-%ED%95%B4%EA%B2%B0-%EB%B0%A9%EB%B2%95/%EA%B0%A4%EB%9F%AD%EC%8B%9C-%EC%8A%A4%EB%A7%88%ED%8A%B8%ED%8F%B0%EC%97%90-%EC%A0%81%EC%9A%A9%EB%90%9C-esim-%EA%B8%B0%EB%8A%A5-%EB%B0%8F-%EC%82%AC%EC%9A%A9-%EB%B0%A9%EB%B2%95%EC%9D%B4-%EA%B6%81%EA%B8%88%ED%95%A9%EB%8B%88%EB%8B%A4/ba-p/18281765" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">삼성 커뮤니티</a>)
                     </p>
+                    
+                    <div className="mt-6 bg-white rounded-lg border border-slate-200 shadow-sm overflow-hidden">
+                      <div className="bg-blue-50 px-5 py-3 border-b border-slate-200">
+                        <h4 className="font-semibold text-blue-800">국내 eSIM 지원 단말기 목록</h4>
+                      </div>
+                      
+                      <div className="p-5 space-y-6">
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                          {/* 삼성 섹션 */}
+                          <div className="bg-slate-50 rounded-lg border border-slate-200 p-4">
+                            <div className="flex items-center mb-3">
+                              <div className="w-8 h-8 flex items-center justify-center bg-blue-100 rounded-full mr-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-blue-700" viewBox="0 0 24 24" fill="currentColor">
+                                  <path d="M2.25 3h19.5A2.25 2.25 0 0 1 24 5.25v13.5A2.25 2.25 0 0 1 21.75 21H2.25A2.25 2.25 0 0 1 0 18.75V5.25A2.25 2.25 0 0 1 2.25 3zm4.703 15.604a.75.75 0 0 0 .6-1.2c-.928-1.156-1.553-2.28-1.553-3.711 0-1.152.303-2.088.8-2.832.498-.744 1.185-1.29 1.965-1.679a6.242 6.242 0 0 1 2.522-.603h.198c.132 0 .264 0 .395.012a6.45 6.45 0 0 1 2.522.591c.792.39 1.49.935 1.998 1.68.508.744.802 1.68.802 2.83 0 1.432-.625 2.557-1.553 3.712a.75.75 0 1 0 1.163.946c1.056-1.297 1.79-2.682 1.79-4.658 0-1.388-.358-2.564-1.02-3.505-.67-.94-1.604-1.639-2.646-2.121a7.934 7.934 0 0 0-3.13-.728c-.171 0-.342 0-.53.012a7.775 7.775 0 0 0-3.129.74c-1.02.481-1.94 1.178-2.605 2.117-.665.94-1.023 2.117-1.023 3.505 0 1.976.734 3.36 1.79 4.658a.75.75 0 0 0 .564.253z" />
+                                </svg>
+                              </div>
+                              <h5 className="font-bold text-slate-800">삼성 갤럭시</h5>
+                            </div>
+                            
+                            <div className="space-y-3">
+                              <div>
+                                <h6 className="text-sm font-medium text-slate-700 border-b border-slate-200 pb-1 mb-1.5">갤럭시 S 시리즈</h6>
+                                <p className="text-xs text-slate-600">갤럭시 S23, 갤럭시 S23+, 갤럭시 S23 Ultra, 갤럭시 S23 FE 및 이후 모델</p>
+                              </div>
+                              
+                              <div>
+                                <h6 className="text-sm font-medium text-slate-700 border-b border-slate-200 pb-1 mb-1.5">갤럭시 Z 시리즈</h6>
+                                <p className="text-xs text-slate-600">갤럭시 Z 폴드4, 갤럭시 Z 플립4 및 이후 모델</p>
+                              </div>
+                              
+                              <div>
+                                <h6 className="text-sm font-medium text-slate-700 border-b border-slate-200 pb-1 mb-1.5">갤럭시 A 시리즈</h6>
+                                <p className="text-xs text-slate-600">갤럭시 A35 5G</p>
+                              </div>
+                              
+                              <div>
+                                <h6 className="text-sm font-medium text-slate-700 border-b border-slate-200 pb-1 mb-1.5">갤럭시 탭 S 시리즈</h6>
+                                <p className="text-xs text-slate-600">갤럭시 탭 S9, 갤럭시 탭 S9+, 갤럭시 탭 S9 Ultra 및 이후 모델</p>
+                              </div>
+                              
+                              <div>
+                                <h6 className="text-sm font-medium text-slate-700 border-b border-slate-200 pb-1 mb-1.5">기타</h6>
+                                <p className="text-xs text-slate-600">갤럭시 퀀텀4, 갤럭시 퀀텀5</p>
+                              </div>
+                            </div>
+                          </div>
+                          
+                          {/* 애플 섹션 */}
+                          <div className="bg-slate-50 rounded-lg border border-slate-200 p-4">
+                            <div className="flex items-center mb-3">
+                              <div className="w-8 h-8 flex items-center justify-center bg-gray-100 rounded-full mr-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-gray-700" viewBox="0 0 24 24" fill="currentColor">
+                                  <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.21 2.33-.91 3.57-.84 1.5.09 2.63.68 3.35 1.76-2.92 1.85-2.46 5.46.14 6.91-.68 1.65-1.46 3.31-2.14 4.34zm-3.85-15.5c-.17 1.57-.94 2.95-2.15 3.78-1.23.89-2.53.96-3.07.92.08-2.28 1.24-4.18 3.07-4.99 1.05-.45 2.24-.54 3.24-.34.04.23.08.46.08.69 0 0-.07-.02-.09-.03-.08-.02-.17-.03-.26-.03h-1.69c-.31 0-.58.2-.67.5-.09.3.02.62.26.8.04.03.08.06.12.09.46.36.75.92.75 1.55v.83c0 .29.24.53.53.53h.05c.55 0 1-.45 1-1v-.83c0-.97-.47-1.81-1.17-2.35v.65z" />
+                                </svg>
+                              </div>
+                              <h5 className="font-bold text-slate-800">Apple</h5>
+                            </div>
+                            
+                            <div className="space-y-3">
+                              <div>
+                                <h6 className="text-sm font-medium text-slate-700 border-b border-slate-200 pb-1 mb-1.5">iPhone</h6>
+                                <p className="text-xs text-slate-600">iPhone XR, iPhone XS, iPhone XS Max 및 이후 모델</p>
+                              </div>
+                              
+                              <div>
+                                <h6 className="text-sm font-medium text-slate-700 border-b border-slate-200 pb-1 mb-1.5">iPad Pro</h6>
+                                <p className="text-xs text-slate-600">iPad Pro 11, iPad Pro 12.9(3세대) 및 이후 모델</p>
+                              </div>
+                              
+                              <div>
+                                <h6 className="text-sm font-medium text-slate-700 border-b border-slate-200 pb-1 mb-1.5">iPad Air</h6>
+                                <p className="text-xs text-slate-600">iPad Air(3세대) 및 이후 모델</p>
+                              </div>
+                              
+                              <div>
+                                <h6 className="text-sm font-medium text-slate-700 border-b border-slate-200 pb-1 mb-1.5">iPad mini</h6>
+                                <p className="text-xs text-slate-600">iPad mini(5세대) 및 이후 모델</p>
+                              </div>
+                              
+                              <div>
+                                <h6 className="text-sm font-medium text-slate-700 border-b border-slate-200 pb-1 mb-1.5">iPad</h6>
+                                <p className="text-xs text-slate-600">iPad(7세대) 및 이후 모델</p>
+                              </div>
+                            </div>
+                          </div>
+                          
+                          {/* 샤오미 섹션 */}
+                          <div className="bg-slate-50 rounded-lg border border-slate-200 p-4">
+                            <div className="flex items-center mb-3">
+                              <div className="w-8 h-8 flex items-center justify-center bg-orange-100 rounded-full mr-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-orange-600" viewBox="0 0 24 24" fill="currentColor">
+                                  <path d="M19.435 6.619C15.987 5.627 16.3 3 12 3 7.7 3 8.013 5.627 4.565 6.619 1.865 7.4 1.215 13.185 3 17.1c1.463 3.2 6.888 4.488 9 3.9 2.112.588 7.537-.7 9-3.9 1.785-3.915 1.135-9.7-1.565-10.481zM7.5 14.5C6.804 14.5 6.55 14.373 6.5 14c-.05-.373.096-.5 1-.5.904 0 1.05.127 1 .5-.05.373-.304.5-1 .5zm9 0c-.696 0-.95-.127-1-.5-.05-.373.096-.5 1-.5.904 0 1.05.127 1 .5-.05.373-.304.5-1 .5zm-8.948-.5a7.474 7.474 0 0 1-1.052.075v-.15c.357 0 .691-.033 1-.075A.53.53 0 0 1 8 13.5a.53.53 0 0 1-.5.35 5.336 5.336 0 0 1-1 .074v.152c.364 0 .698-.033 1-.076A.53.53 0 0 1 8 13.65a.53.53 0 0 1-.448.35zm9 0a7.474 7.474 0 0 1-1.052.075v-.15c.357 0 .691-.033 1-.075A.53.53 0 0 1 17 13.5a.53.53 0 0 1-.5.35 5.336 5.336 0 0 1-1 .074v.152c.364 0 .698-.033 1-.076A.53.53 0 0 1 17 13.65a.53.53 0 0 1-.448.35zm-9-2a7.474 7.474 0 0 1-1.052.075v-.15c.357 0 .691-.033 1-.075A.53.53 0 0 1 8 11.5a.53.53 0 0 1-.5.35 5.336 5.336 0 0 1-1 .074v.152c.364 0 .698-.033 1-.076A.53.53 0 0 1 8 11.65a.53.53 0 0 1-.448.35zm9 0a7.474 7.474 0 0 1-1.052.075v-.15c.357 0 .691-.033 1-.075A.53.53 0 0 1 17 11.5a.53.53 0 0 1-.5.35 5.336 5.336 0 0 1-1 .074v.152c.364 0 .698-.033 1-.076A.53.53 0 0 1 17 11.65a.53.53 0 0 1-.448.35z" />
+                                </svg>
+                              </div>
+                              <h5 className="font-bold text-slate-800">샤오미</h5>
+                            </div>
+                            
+                            <div className="space-y-3">
+                              <div>
+                                <h6 className="text-sm font-medium text-slate-700 border-b border-slate-200 pb-1 mb-1.5">Redmi</h6>
+                                <p className="text-xs text-slate-600">Redmi Note 13 Pro</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        
+                        <div className="text-right text-xs text-slate-500 pt-2 border-t border-slate-200">
+                          ※ 위 목록은 2025년 5월 기준으로, 제조사의 신규 모델 출시에 따라 변경될 수 있습니다.
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
                 
