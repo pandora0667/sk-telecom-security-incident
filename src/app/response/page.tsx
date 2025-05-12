@@ -328,6 +328,44 @@ export default function ResponsePage() {
                         보고되지 않았다고 밝혔습니다. 이는 SKT의 신속한 USIM 차단/교체 조치와 고객 보호 시스템 작동 덕분으로 분석됩니다.
                       </p>
                     </div>
+                    
+                    <div className="bg-blue-50 rounded-lg p-5 border border-blue-100 mt-6">
+                      <h4 className="font-semibold text-blue-800 mb-2 flex items-center">
+                        <span className="text-purple-700 mr-2">⑦</span> 유심 재설정 설루션 도입 (2025.05.11)
+                      </h4>
+                      <p className="mb-4 leading-relaxed">
+                        SKT는 5월 11일, 실물 유심 교체 없이 유심 일부 정보를 변경할 수 있는 <strong className="text-blue-700">'유심 재설정' 설루션</strong>을 추가로 도입했습니다. 
+                        이 방식은 유심에 존재하는 '사용자 식별·인증 정보'를 새 정보로 변경하여, 유출된 유심 정보를 이용한 복제 시도 시 시스템 접속이 차단되도록 합니다.
+                      </p>
+                      
+                      <div className="flex flex-col md:flex-row gap-4 bg-white p-4 rounded-lg border border-blue-100">
+                        <div>
+                          <h5 className="text-sm font-medium text-blue-700 mb-2">유심 재설정의 주요 장점</h5>
+                          <ul className="text-sm text-slate-700 list-disc pl-5 space-y-1">
+                            <li>티머니, 금융인증서, 연락처 등 사용자 저장 정보 유지</li>
+                            <li>금융기관 재인증 불필요 - 빠른 처리 가능</li>
+                            <li>일반 유심과 eSIM 사용자 모두 적용 가능</li>
+                            <li>실물 유심 교체와 동등한 보안 효과 제공</li>
+                          </ul>
+                        </div>
+                        <div>
+                          <h5 className="text-sm font-medium text-blue-700 mb-2">이용 방법</h5>
+                          <ul className="text-sm text-slate-700 list-disc pl-5 space-y-1">
+                            <li>T월드 매장 방문 시 유심 재설정 또는 실물 교체 중 선택 가능</li>
+                            <li>유심 재설정 후에도 향후 원하면 1회 무료 실물 교체 가능</li>
+                            <li>기존 유심 교체 신청자 대상으로 우선 적용</li>
+                          </ul>
+                          <p className="text-xs text-slate-500 mt-2">
+                            출처: <a href="https://www.yna.co.kr/view/AKR20250511017951017" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">연합뉴스(2025.05.11)</a>
+                          </p>
+                        </div>
+                      </div>
+                      
+                      <p className="mt-4 text-sm text-slate-700">
+                        이 조치로 유심 재고 부족 문제를 완화하고, 고객 편의성을 높였습니다. 임봉호 SKT MNO 사업부장은 "다음 주부터 유심 재고량이 부족해서 교체를 못 하는 일은 없을 것"이라며, 
+                        유심 재설정과 교체를 병행하여 고객 상황에 맞는 선택이 가능하다고 밝혔습니다.
+                      </p>
+                    </div>
                   </div>
                 </div>
                 

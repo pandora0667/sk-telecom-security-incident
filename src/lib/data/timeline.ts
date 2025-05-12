@@ -204,5 +204,14 @@ export const timelineData: TimelineEvent[] = [
     category: 'government',
     important: true,
     source: 'lastcard.tistory.com'
+  },
+  {
+    date: '2025.05.12',
+    title: 'SK텔레콤, 유심 재설정 설루션 도입',
+    description: 'SK텔레콤이 실물 유심 교체 없이 유심 일부 정보를 변경할 수 있는 \'유심 재설정\' 설루션을 도입했다고 발표. 이 방식은 유심에 존재하는 \'사용자 식별·인증 정보\' 일부를 새 정보로 변경하여 누군가 기존 유출된 유심 정보를 이용해 복제를 시도하더라도 시스템 접속이 차단되는 방식이다. 금융인증서나 티머니, 연락처 등의 재설정이 필요 없어 편의성이 향상됐다.',
+    category: 'response',
+    important: true,
+    link: 'https://www.yna.co.kr/view/AKR20250511017951017',
+    source: 'yna.co.kr'
   }
 ]; 
