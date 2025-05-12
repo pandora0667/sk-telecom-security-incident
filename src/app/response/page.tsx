@@ -334,8 +334,8 @@ export default function ResponsePage() {
                         <span className="text-purple-700 mr-2">⑦</span> 유심 재설정 설루션 도입 (2025.05.11)
                       </h4>
                       <p className="mb-4 leading-relaxed">
-                        SKT는 5월 11일, 실물 유심 교체 없이 유심 일부 정보를 변경할 수 있는 <strong className="text-blue-700">'유심 재설정' 설루션</strong>을 추가로 도입했습니다. 
-                        이 방식은 유심에 존재하는 '사용자 식별·인증 정보'를 새 정보로 변경하여, 유출된 유심 정보를 이용한 복제 시도 시 시스템 접속이 차단되도록 합니다.
+                        SKT는 5월 11일, 실물 유심 교체 없이 유심 일부 정보를 변경할 수 있는 <strong className="text-blue-700">&apos;유심 재설정&apos; 설루션</strong>을 추가로 도입했습니다. 
+                        이 방식은 유심에 존재하는 &apos;사용자 식별·인증 정보&apos;를 새 정보로 변경하여, 유출된 유심 정보를 이용한 복제 시도 시 시스템 접속이 차단되도록 합니다.
                       </p>
                       
                       <div className="flex flex-col md:flex-row gap-4 bg-white p-4 rounded-lg border border-blue-100">
@@ -362,7 +362,7 @@ export default function ResponsePage() {
                       </div>
                       
                       <p className="mt-4 text-sm text-slate-700">
-                        이 조치로 유심 재고 부족 문제를 완화하고, 고객 편의성을 높였습니다. 임봉호 SKT MNO 사업부장은 "다음 주부터 유심 재고량이 부족해서 교체를 못 하는 일은 없을 것"이라며, 
+                        이 조치로 유심 재고 부족 문제를 완화하고, 고객 편의성을 높였습니다. 임봉호 SKT MNO 사업부장은 &quot;다음 주부터 유심 재고량이 부족해서 교체를 못 하는 일은 없을 것&quot;이라며, 
                         유심 재설정과 교체를 병행하여 고객 상황에 맞는 선택이 가능하다고 밝혔습니다.
                       </p>
                     </div>
