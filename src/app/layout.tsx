@@ -19,7 +19,8 @@ export const metadata: Metadata = {
   // 광고 및 추적 관련 메타 태그 추가
   other: {
     'referrer': 'no-referrer-when-downgrade',
-    'google': 'notranslate'
+    'google': 'notranslate',
+    'naver-site-verification': '327538316bc4f454cb31189516885602285161b0'
   },
   icons: {
     icon: [
@@ -41,6 +42,8 @@ export default function RootLayout({
         {/* 추적 방지 및 광고 차단 관련 태그 */}
         <meta name="referrer" content="no-referrer-when-downgrade" />
         <meta name="googlebot" content="notranslate" />
+        {/* 네이버 사이트 인증 */}
+        <meta name="naver-site-verification" content="327538316bc4f454cb31189516885602285161b0" />
         {/* 외부 자원 사전 연결 방지 */}
         <meta httpEquiv="x-dns-prefetch-control" content="off" />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
