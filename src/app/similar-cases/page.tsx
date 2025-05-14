@@ -4,6 +4,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import Script from "next/script";
 
 // 애니메이션 변수
 const staggerContainer = {
@@ -34,6 +35,90 @@ export default function SimilarCasesPage() {
   return (
     <div className="min-h-screen bg-background flex flex-col">
       <Header />
+      <Script
+        id="similar-cases-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "CollectionPage",
+            "name": "유사 해킹사례",
+            "description": "국내외 통신사 및 기업 대상 해킹 사례들을 분석했습니다.",
+            "datePublished": "2025-05-05",
+            "dateModified": "2025-05-15",
+            "publisher": {
+              "@type": "Organization",
+              "name": "SK텔레콤 유심 해킹 사태 분석",
+              "url": "https://skt-hack.wisoft.io"
+            },
+            "hasPart": [
+              {
+                "@type": "Article",
+                "name": "KT 심스와핑 해킹 사례 (2021-2022)",
+                "description": "KT에서는 2021년 12월부터 2022년 초까지 심스와핑(SIM Swapping) 공격이 발생했습니다. 이는 SKT 해킹 사태보다 3년 전에 발생한 사건이었으며, 국내에서 보고된 첫 번째 심스와핑 사례로 알려져 있습니다.",
+                "datePublished": "2025-05-05",
+                "author": {
+                  "@type": "Organization",
+                  "name": "SK텔레콤 유심 해킹 사태 분석"
+                },
+                "isPartOf": {
+                  "@type": "CollectionPage",
+                  "@id": "https://skt-hack.wisoft.io/similar-cases"
+                }
+              },
+              {
+                "@type": "Article",
+                "name": "LG유플러스 고객센터 해킹 (2024)",
+                "description": "2024년 3월, LG유플러스 고객센터 시스템이 해킹되어 일부 고객 정보가 유출되었습니다.",
+                "datePublished": "2025-05-05",
+                "author": {
+                  "@type": "Organization",
+                  "name": "SK텔레콤 유심 해킹 사태 분석"
+                },
+                "isPartOf": {
+                  "@type": "CollectionPage",
+                  "@id": "https://skt-hack.wisoft.io/similar-cases"
+                }
+              },
+              {
+                "@type": "Article", 
+                "name": "T-Mobile 데이터 유출 사태 (2023)",
+                "description": "미국 통신사 T-Mobile이 2023년 1월에 약 3,740만명의 고객 정보가 해킹으로 유출된 사건입니다.",
+                "datePublished": "2025-05-05",
+                "author": {
+                  "@type": "Organization",
+                  "name": "SK텔레콤 유심 해킹 사태 분석"
+                },
+                "isPartOf": {
+                  "@type": "CollectionPage",
+                  "@id": "https://skt-hack.wisoft.io/similar-cases"
+                }
+              }
+            ],
+            "mainEntity": {
+              "@type": "ItemList",
+              "numberOfItems": 3,
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "url": "https://skt-hack.wisoft.io/similar-cases#kt"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "url": "https://skt-hack.wisoft.io/similar-cases#lgu-plus"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 3,
+                  "url": "https://skt-hack.wisoft.io/similar-cases#t-mobile"
+                }
+              ]
+            }
+          })
+        }}
+      />
       <main className="flex-1 w-full max-w-6xl mx-auto px-4 py-12">
         <motion.div
           initial="hidden"

@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import Image from 'next/image';
+import Script from 'next/script';
 
 // 애니메이션 변수
 const staggerContainer = {
@@ -35,6 +36,52 @@ export default function ResponsePage() {
   return (
     <div className="min-h-screen bg-background flex flex-col">
       <Header />
+      <Script
+        id="response-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "HowTo",
+            "name": "SK텔레콤 유심 해킹 대응 조치",
+            "description": "SK텔레콤의 유심 해킹 사태에 대한 대응 조치와 정부 및 산업계의 후속 대응을 정리했습니다.",
+            "totalTime": "PT30M",
+            "datePublished": "2025-05-05",
+            "dateModified": "2025-05-15",
+            "author": {
+              "@type": "Organization",
+              "name": "SK텔레콤 유심 해킹 사태 분석",
+              "url": "https://skt-hack.wisoft.io"
+            },
+            "step": [
+              {
+                "@type": "HowToStep",
+                "name": "즉시 대응 조치",
+                "text": "침입 경로 차단 및 시스템 격리, KISA 및 관계기관 신고, 전 고객 대상 유심 무상 교체 프로그램, USIM 보호서비스 자동 적용, 고객 대상 보안 경고 발령 등의 조치가 취해졌습니다.",
+                "url": "https://skt-hack.wisoft.io/response#immediate"
+              },
+              {
+                "@type": "HowToStep",
+                "name": "장기적 대응 방안",
+                "text": "네트워크 보안 강화 및 전수 점검, HSS 구조 개편 및 인증키 분산 관리, AI 기반 이상징후 탐지 시스템 도입, 위기 커뮤니케이션 체계 구축, 통신망 보안 제도 및 규제 개편 등의 장기적 방안이 계획되었습니다.",
+                "url": "https://skt-hack.wisoft.io/response#long-term"
+              },
+              {
+                "@type": "HowToStep",
+                "name": "고객 보호를 위한 조치 안내",
+                "text": "SK텔레콤은 공식 영상을 통해 고객 보호를 위한 추가 조치를 안내했습니다.",
+                "url": "https://skt-hack.wisoft.io/response#customer-protection"
+              },
+              {
+                "@type": "HowToStep",
+                "name": "USIM 교체 신청 방법",
+                "text": "유심 교체 신청, 유심 보호 서비스 신청 및 설정 방법, 교통카드 및 eSIM 관련 정보, 부가 서비스 등 추가 보안 조치에 대한 안내가 제공됩니다.",
+                "url": "https://skt-hack.wisoft.io/response#usim-replacement"
+              }
+            ]
+          })
+        }}
+      />
       <main className="flex-1 w-full max-w-6xl mx-auto px-4 py-12">
         <motion.div
           initial="hidden"

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import Script from "next/script";
 
 // 애니메이션 변수
 const staggerContainer = {
@@ -34,6 +35,67 @@ export default function PressPage() {
   return (
     <div className="min-h-screen bg-background flex flex-col">
       <Header />
+      <Script
+        id="press-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "NewsArticle",
+            "headline": "SK텔레콤 유심 해킹 사태에 대한 사회적 반응",
+            "description": "SK텔레콤 유심 해킹 사태에 대한 국내외 언론, 전문가들의 분석 및 일반 대중들의 반응을 정리했습니다.",
+            "image": "https://skt-hack.wisoft.io/skt-logo/SK-telecom_CMYK_EN.jpg",
+            "datePublished": "2025-05-01",
+            "dateModified": "2025-05-15",
+            "author": {
+              "@type": "Organization",
+              "name": "SK텔레콤 유심 해킹 사태 분석",
+              "url": "https://skt-hack.wisoft.io"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "SK텔레콤 유심 해킹 사태 분석",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://skt-hack.wisoft.io/skt-logo/SK-telecom_CMYK_EN.jpg"
+              }
+            },
+            "mainEntityOfPage": {
+              "@type": "WebPage",
+              "@id": "https://skt-hack.wisoft.io/press"
+            },
+            "keywords": "SK텔레콤, 유심 해킹, 보안사고, 언론 보도, 전문가 분석",
+            "articleSection": "보안 사고 분석",
+            "isAccessibleForFree": "True",
+            "about": [
+              {
+                "@type": "Thing",
+                "name": "사이버 보안"
+              },
+              {
+                "@type": "Thing",
+                "name": "통신사 해킹"
+              },
+              {
+                "@type": "Thing",
+                "name": "개인정보 유출"
+              }
+            ],
+            "citation": [
+              {
+                "@type": "CreativeWork",
+                "name": "국내 언론 초기 보도와 정정",
+                "url": "https://www.kyeonggi.com/article/20250506580117"
+              },
+              {
+                "@type": "CreativeWork",
+                "name": "보안 전문가들의 기술 분석",
+                "url": "https://skt-hack.wisoft.io/press#expert-analysis"
+              }
+            ]
+          })
+        }}
+      />
       <main className="flex-1 w-full max-w-6xl mx-auto px-4 py-12">
         <motion.div
           initial="hidden"

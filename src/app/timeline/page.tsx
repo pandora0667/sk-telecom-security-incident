@@ -148,11 +148,55 @@ export default function TimelinePage() {
                 "@type": "NewsArticle",
                 "headline": event.title,
                 "datePublished": event.date.replace(/\./g, "-"),
-                "articleBody": event.description
+                "dateModified": event.date.replace(/\./g, "-"),
+                "articleBody": event.description,
+                "author": {
+                  "@type": "Organization",
+                  "name": "SK텔레콤 유심 해킹 사태 분석팀"
+                },
+                "publisher": {
+                  "@type": "Organization",
+                  "name": "SK텔레콤 유심 해킹 사태 분석",
+                  "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://skt-hack.wisoft.io/skt-logo/SK-telecom_CMYK_EN.jpg",
+                    "width": "256",
+                    "height": "120"
+                  }
+                },
+                "keywords": [
+                  "SK텔레콤",
+                  "유심 해킹",
+                  event.category,
+                  "사이버 보안"
+                ],
+                "isAccessibleForFree": "True",
+                "mainEntityOfPage": {
+                  "@type": "WebPage",
+                  "@id": `https://skt-hack.wisoft.io/timeline#${event.date.replace(/\./g, "-")}`
+                }
               }
             })),
             "name": "SK텔레콤 유심 해킹 사건 전체 타임라인",
-            "description": "2025년 4월 18일 발생한 SK텔레콤 유심 해킹 사건의 시간순 상세 내역입니다. 최초 침해부터 현재까지의 진행 상황을 확인하세요."
+            "description": "2025년 4월 18일 발생한 SK텔레콤 유심 해킹 사건의 시간순 상세 내역입니다. 최초 침해부터 현재까지의 진행 상황을 확인하세요.",
+            "numberOfItems": timelineData.length,
+            "itemListOrder": "https://schema.org/ItemListOrderDescending",
+            "datePublished": "2025-05-15",
+            "dateModified": "2025-05-15",
+            "publisher": {
+              "@type": "Organization",
+              "name": "SK텔레콤 유심 해킹 사태 분석",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://skt-hack.wisoft.io/skt-logo/SK-telecom_CMYK_EN.jpg",
+                "width": "256",
+                "height": "120"
+              }
+            },
+            "mainEntityOfPage": {
+              "@type": "WebPage",
+              "@id": "https://skt-hack.wisoft.io/timeline"
+            }
           })
         }}
       />

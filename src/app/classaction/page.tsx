@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import Script from "next/script";
 
 // 애니메이션 변수
 const staggerContainer = {
@@ -34,6 +35,69 @@ export default function ClassActionPage() {
   return (
     <div className="min-h-screen bg-background flex flex-col">
       <Header />
+      <Script
+        id="classaction-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "LegalService",
+            "name": "SK텔레콤 유심 해킹 집단소송 안내",
+            "description": "SK텔레콤 유심 해킹 사건 관련 집단소송 참여 방법과 현황에 대한 정보를 제공합니다.",
+            "provider": {
+              "@type": "Organization",
+              "name": "SK텔레콤 유심 해킹 사태 분석",
+              "url": "https://skt-hack.wisoft.io"
+            },
+            "areaServed": "대한민국",
+            "serviceType": "집단소송 안내",
+            "audience": {
+              "@type": "Audience",
+              "audienceType": "SK텔레콤 유심 해킹 피해자"
+            },
+            "serviceOutput": "집단소송 참여 방법 안내 및 현황 정보",
+            "availableChannel": {
+              "@type": "ServiceChannel",
+              "serviceUrl": "https://skt-hack.wisoft.io/classaction",
+              "servicePhone": "+82-2-123-4567",
+              "serviceSmsNumber": "+82-2-123-4567"
+            },
+            "termsOfService": "본 페이지는 공신력 있는 언론·정부 발표를 종합한 정보 제공용 요약이며, 법률적 조언을 대체할 수 없습니다. 구체적 소송 참여 전에는 반드시 전문 법률가와 상담하시기 바랍니다.",
+            "offer": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "KRW"
+            },
+            "hasOfferCatalog": {
+              "@type": "OfferCatalog",
+              "name": "SK텔레콤 유심 해킹 소송 유형",
+              "itemListElement": [
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "민사 손해배상"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "집단분쟁조정"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "형사고발"
+                  }
+                }
+              ]
+            }
+          })
+        }}
+      />
       <main className="flex-1 w-full max-w-6xl mx-auto px-4 py-12">
         <motion.div
           initial="hidden"

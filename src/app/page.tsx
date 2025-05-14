@@ -60,13 +60,33 @@ export default function Home() {
               }
             },
             "mainEntity": {
+              "@context": "https://schema.org",
               "@type": "Event",
               "name": "SK텔레콤 유심 해킹 사태",
               "startDate": "2025-04-18",
+              "performer": {
+                "@type": "Organization",
+                "name": "SK텔레콤"
+              },
+              "eventStatus": "https://schema.org/EventScheduled",
+              "image": "https://skt-hack.wisoft.io/skt-logo/SK-telecom_CMYK_EN.jpg",
+              "offers": {
+                "@type": "Offer",
+                "url": "https://www.sktelecom.com",
+                "price": "0",
+                "priceCurrency": "KRW",
+                "availability": "https://schema.org/InStock"
+              },
+              "endDate": "2025-05-15",
+              "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
               "location": {
                 "@type": "Place",
                 "name": "SK텔레콤 성수 사옥",
-                "address": "대한민국 서울"
+                "address": {
+                  "@type": "PostalAddress",
+                  "addressLocality": "서울",
+                  "addressCountry": "대한민국"
+                }
               },
               "description": "2025년 4월 18일 발생한 SK텔레콤의 유심(USIM) 정보 유출 사태",
               "organizer": {

@@ -51,22 +51,50 @@ export default function AnalysisPage() {
             "headline": "SK텔레콤 유심 해킹 침해 분석",
             "description": "2025년 4월 발생한 SK텔레콤 유심 해킹 사태의 침해 분석 보고서. BPFdoor 악성코드를 이용한 공격 방식과 HSS 서버 침투 과정, 유출된 데이터에 대한 전문적 분석을 제공합니다.",
             "datePublished": "2025-05-15",
+            "dateModified": "2025-05-15",
             "author": {
               "@type": "Organization",
-              "name": "SK텔레콤 유심 해킹 사태 분석"
+              "name": "SK텔레콤 유심 해킹 사태 분석",
+              "url": "https://skt-hack.wisoft.io"
             },
-            "about": {
-              "@type": "Thing",
-              "name": "BPFdoor 악성코드 및 통신망 보안"
-            },
-            "keywords": "BPFdoor, 악성코드, SK텔레콤, 유심 해킹, HSS 서버, 사이버보안",
+            "about": [
+              {
+                "@type": "Thing",
+                "name": "BPFdoor 악성코드"
+              },
+              {
+                "@type": "Thing",
+                "name": "통신망 보안"
+              },
+              {
+                "@type": "Thing",
+                "name": "사이버 공격 분석"
+              }
+            ],
+            "keywords": "BPFdoor, 악성코드, SK텔레콤, 유심 해킹, HSS 서버, 사이버보안, IMSI, Ki 인증키",
+            "articleSection": "기술 분석",
+            "wordCount": "8500",
+            "timeRequired": "PT30M",
             "publisher": {
               "@type": "Organization",
               "name": "SK텔레콤 유심 해킹 사태 분석",
               "logo": {
                 "@type": "ImageObject",
-                "url": "https://skt-hack.wisoft.io/skt-logo/SK-telecom_CMYK_EN.jpg"
+                "url": "https://skt-hack.wisoft.io/skt-logo/SK-telecom_CMYK_EN.jpg",
+                "width": "256",
+                "height": "120"
               }
+            },
+            "image": {
+              "@type": "ImageObject",
+              "url": "https://skt-hack.wisoft.io/images/analysis/bpfdoor-diagram.png",
+              "width": "800",
+              "height": "600",
+              "caption": "BPFdoor 악성코드 동작 다이어그램"
+            },
+            "mainEntityOfPage": {
+              "@type": "WebPage",
+              "@id": "https://skt-hack.wisoft.io/analysis"
             }
           })
         }}
