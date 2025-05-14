@@ -28,6 +28,28 @@ export const metadata: Metadata = {
     ],
     shortcut: '/favicon.svg',
     apple: '/apple-touch-icon.svg',
+  },
+  // Open Graph 메타데이터 추가
+  openGraph: {
+    title: "SK텔레콤 유심 해킹 사태 분석",
+    description: "2025년 4월 발생한 SK텔레콤 유심 해킹 사태의 전체 타임라인, 대응 조치, 집단소송 현황 및 보안 대책 분석",
+    images: [
+      {
+        url: '/skt-logo/SK-telecom_CMYK_EN.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'SK텔레콤 유심 해킹 사태 분석'
+      }
+    ],
+    locale: 'ko_KR',
+    type: 'website',
+  },
+  // 트위터 카드 메타데이터 추가
+  twitter: {
+    card: 'summary_large_image',
+    title: "SK텔레콤 유심 해킹 사태 분석",
+    description: "2025년 4월 발생한 SK텔레콤 유심 해킹 사태의 종합 분석 및 보안 대책",
+    images: ['/skt-logo/SK-telecom_CMYK_EN.jpg']
   }
 };
 
