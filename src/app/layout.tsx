@@ -70,6 +70,25 @@ export default function RootLayout({
         <meta httpEquiv="x-dns-prefetch-control" content="off" />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.svg" />
+        
+        {/* JSON-LD 구조화된 데이터 */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              "url": "https://skt-hack.wisoft.io/",
+              "name": "SK텔레콤 유심 해킹 사태 분석",
+              "description": "2025년 4월 발생한 SK텔레콤 유심 해킹 사태에 대한 분석과 대응 방안",
+              "potentialAction": {
+                "@type": "SearchAction",
+                "target": "https://skt-hack.wisoft.io/search?q={search_term_string}",
+                "query-input": "required name=search_term_string"
+              }
+            })
+          }}
+        />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         {/* Google Analytics 태그 */}

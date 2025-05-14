@@ -10,6 +10,7 @@ import Image from 'next/image';
 import { timelineData } from '@/lib/data/timeline';
 import { useState } from 'react';
 import StockChart from '@/components/StockChart';
+import Script from "next/script";
 
 // 자연스러운 애니메이션 순서를 위한 설정
 const staggerContainer = {
@@ -41,6 +42,43 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-background flex flex-col">
+      <Script
+        id="main-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "name": "SK텔레콤 유심 해킹 사태 종합 분석",
+            "description": "2025년 4월 발생한 SK텔레콤 유심 해킹 사태의 종합 분석 사이트입니다. 해킹 과정, 대응 조치, 보상, 집단소송, 미래 보안 대책까지 모든 정보를 제공합니다.",
+            "publisher": {
+              "@type": "Organization",
+              "name": "SK텔레콤 유심 해킹 사태 분석",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://skt-hack.wisoft.io/skt-logo/SK-telecom_CMYK_EN.jpg"
+              }
+            },
+            "mainEntity": {
+              "@type": "Event",
+              "name": "SK텔레콤 유심 해킹 사태",
+              "startDate": "2025-04-18",
+              "location": {
+                "@type": "Place",
+                "name": "SK텔레콤 성수 사옥",
+                "address": "대한민국 서울"
+              },
+              "description": "2025년 4월 18일 발생한 SK텔레콤의 유심(USIM) 정보 유출 사태",
+              "organizer": {
+                "@type": "Organization",
+                "name": "SK텔레콤",
+                "url": "https://www.sktelecom.com"
+              }
+            }
+          })
+        }}
+      />
+      
       <Header />
       <HeroSection />
       <main className="mx-auto w-full max-w-6xl px-4 py-16 flex-1">

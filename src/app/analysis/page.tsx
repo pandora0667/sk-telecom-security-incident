@@ -9,6 +9,7 @@ import BPFDoorDiagram from "./BPFDoorDiagram";
 import BPFDoorSource from "./BPFDoorSource";
 import { useState } from "react";
 import ImageViewer from "@/components/ui/image-viewer";
+import Script from "next/script";
 
 // 애니메이션 변수
 const staggerContainer = {
@@ -40,6 +41,37 @@ export default function AnalysisPage() {
 
   return (
     <div className="min-h-screen bg-background flex flex-col">
+      <Script
+        id="analysis-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "TechArticle",
+            "headline": "SK텔레콤 유심 해킹 침해 분석",
+            "description": "2025년 4월 발생한 SK텔레콤 유심 해킹 사태의 침해 분석 보고서. BPFdoor 악성코드를 이용한 공격 방식과 HSS 서버 침투 과정, 유출된 데이터에 대한 전문적 분석을 제공합니다.",
+            "datePublished": "2025-05-15",
+            "author": {
+              "@type": "Organization",
+              "name": "SK텔레콤 유심 해킹 사태 분석"
+            },
+            "about": {
+              "@type": "Thing",
+              "name": "BPFdoor 악성코드 및 통신망 보안"
+            },
+            "keywords": "BPFdoor, 악성코드, SK텔레콤, 유심 해킹, HSS 서버, 사이버보안",
+            "publisher": {
+              "@type": "Organization",
+              "name": "SK텔레콤 유심 해킹 사태 분석",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://skt-hack.wisoft.io/skt-logo/SK-telecom_CMYK_EN.jpg"
+              }
+            }
+          })
+        }}
+      />
+      
       <Header />
       <main className="flex-1 w-full max-w-6xl mx-auto px-4 py-12">
         <motion.div

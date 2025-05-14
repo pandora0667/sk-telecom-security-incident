@@ -9,6 +9,7 @@ import { timelineData } from '@/lib/data/timeline';
 import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { cn } from "@/lib/utils";
+import Script from "next/script";
 
 // 애니메이션 변수
 const staggerContainer = {
@@ -133,6 +134,29 @@ export default function TimelinePage() {
 
   return (
     <div className="min-h-screen bg-background flex flex-col">
+      <Script
+        id="timeline-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ItemList",
+            "itemListElement": timelineData.slice(0, 10).map((event, index) => ({
+              "@type": "ListItem",
+              "position": index + 1,
+              "item": {
+                "@type": "NewsArticle",
+                "headline": event.title,
+                "datePublished": event.date.replace(/\./g, "-"),
+                "articleBody": event.description
+              }
+            })),
+            "name": "SK텔레콤 유심 해킹 사건 전체 타임라인",
+            "description": "2025년 4월 18일 발생한 SK텔레콤 유심 해킹 사건의 시간순 상세 내역입니다. 최초 침해부터 현재까지의 진행 상황을 확인하세요."
+          })
+        }}
+      />
+      
       <Header />
       <main className="flex-1 w-full max-w-6xl mx-auto px-4 py-12">
         <motion.div

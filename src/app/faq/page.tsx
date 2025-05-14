@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { useState } from 'react';
+import Script from "next/script";
 
 // 애니메이션 변수
 const staggerContainer = {
@@ -74,6 +75,59 @@ const FAQItem = ({ question, answer }: FAQItemProps) => {
 export default function FAQPage() {
   return (
     <div className="min-h-screen bg-background flex flex-col">
+      <Script
+        id="faq-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "SK텔레콤 유심 해킹 사건은 무엇이며 언제 발생했나요?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "SK텔레콤의 가입자 인증 서버(HSS)가 해킹을 당해 2천 5백만 명의 가입자 유심 정보가 유출된 사건입니다. 해킹은 2025년 4월 18일에 발생했으며, 성수 사옥에 설치된 가입자 인증 서버(HSS) 5대 중 3대에서 데이터가 유출되었습니다."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "SKT는 해킹 사실을 언제 파악했고 고객에게는 언제 알렸나요?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "SKT는 4월 18일 저녁 6시 9분에 네트워크 인프라센터에서 트래픽 이상 징후를 처음으로 감지했고, 같은 날 밤 11시 20분에 실제 악성코드를 발견했습니다. 4월 19일 밤 11시 40분에 유심 정보 유출 사실을 내부적으로 확정했고, 4월 20일 오후 3시 30분에 내부 결정권자에게 보고한 후 KISA에 신고했습니다. 고객에게는 4월 22일 공식 홈페이지 공지 및 언론 발표를 통해 사이버 침해 사고 발생 사실을 인정하고 사과했습니다."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "이번 해킹으로 몇 명의 고객 정보가 유출된 것으로 알려졌나요?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "SKT는 약 2300만명의 가입자를 보유한 통신사로, SK텔레콤 망을 사용하는 알뜰폰 가입자를 포함해 2500만 명의 유심 정보가 유출된 것으로 파악되고 있습니다."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "유출된 정보에는 어떤 내용이 포함되었나요?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "유출된 항목은 이용자의 △전화번호(MSISDN) △국제이동통신가입자식별번호(IMSI) △가입자 인증키(Ki) 등 유심을 개통하거나 인증할 때 필요한 핵심 정보들입니다. 과학기술정보통신부에 따르면 가입자 전화번호, 가입자식별키(IMSI) 등 유심 복제에 활용될 수 있는 4종과 유심 정보 처리 등에 필요한 관리용 정보 21종이 유출됐다고 합니다. 다만 단말기 고유식별번호(IMEI) 유출은 없었으며, 이름, 주민등록번호 등 개인식별정보도 유출되지 않았다고 합니다."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "유출된 유심 정보로 인해 어떤 피해가 발생할 수 있나요?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "유출된 유심 정보를 이용해 '심 스와핑'이라는 공격이 가능합니다. 심 스와핑은 공격자가 유출된 정보를 이용해 피해자의 전화번호와 동일하게 작동하는 복제폰을 만드는 수법입니다. 이를 통해 피해자의 문자나 전화를 가로챌 수 있고, 휴대폰 번호 인증을 사용하는 서비스(금융, SNS, 게임 등)에 접근하여 금전 탈취나 개인 정보 유출, 도용 등의 2차 피해를 발생시킬 수 있습니다. 또한 유출된 정보는 보이스피싱이나 스미싱 등 사기에 악용될 가능성도 있습니다."
+                }
+              }
+            ]
+          })
+        }}
+      />
+      
       <Header />
       <main className="flex-1 w-full max-w-6xl mx-auto px-4 py-12">
         <motion.div
