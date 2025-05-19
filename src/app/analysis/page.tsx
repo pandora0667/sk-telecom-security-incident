@@ -1034,15 +1034,46 @@ export default function AnalysisPage() {
                         </li>
                       </ul>
 
+                      <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-3 mt-4 mb-2">
+                        <h5 className="text-yellow-800 font-semibold mb-1 flex items-center">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="18"
+                            height="18"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            className="mr-2"
+                          >
+                            <path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+                            <line x1="12" y1="9" x2="12" y2="13"/>
+                            <line x1="12" y1="17" x2="12.01" y2="17"/>
+                          </svg>
+                          2차 조사 결과 추가 발견된 유출 가능성 정보
+                        </h5>
+                        <p className="text-sm text-slate-700">
+                          민관합동조사단이 2025년 5월 19일 발표한 2차 조사 결과에 따르면, 통합고객인증 서버와 연동되는 서버 2대에서 다음과 같은 추가 정보 유출 가능성이 확인되었습니다:
+                        </p>
+                        <ul className="mt-2 space-y-2 text-sm text-slate-700 pl-5 list-disc">
+                          <li>
+                            <span className="font-medium text-yellow-800">IMEI(단말기 고유식별번호)</span>: 
+                            총 291,831건의 단말기 고유식별번호가 포함된 파일이 감염된 서버의 임시 저장 파일에서 발견되었습니다. 이 정보는 특정 기간(2024.12.3~2025.4.24) 동안은 유출되지 않았으나, 로그가 없는 기간(2022.6.15~2024.12.2)의 유출 여부는 확인할 수 없는 상태입니다.
+                          </li>
+                          <li>
+                            <span className="font-medium text-yellow-800">개인정보</span>: 
+                            이름, 생년월일, 전화번호, 이메일 등 다수의 개인정보가 감염된 서버 2대에서 발견되었습니다. 이 정보들의 유출 여부도 로그가 없는 기간에 대해서는 확인이 불가능합니다.
+                          </li>
+                        </ul>
+                      </div>
+
                       <p className="text-sm text-slate-700 mt-3">
-                        이 4종 세트(IMSI, Ki, MSISDN, OPC)는 실제 USIM 복제
-                        공격에 필요한 핵심 재료입니다. 반면 유출되지 않은 정보도
-                        존재합니다.
-                        <strong>IMEI(단말기 고유식별번호)</strong>는 HSS가 아닌
-                        별도 시스템에서 관리되어 유출되지 않았습니다. 이 점이
-                        중요한 이유는 해커가 IMSI와 Ki로 복제 SIM을 만들더라도,
-                        다른 단말기(IMEI가 다름)를 쓸 경우 통신망에서 식별이
-                        가능하기 때문입니다.
+                        1차 조사 결과에서는 <strong>IMEI(단말기 고유식별번호)</strong>가 HSS가 아닌
+                        별도 시스템에서 관리되어 유출되지 않았다고 밝혔으나, 2차 조사에서는 이 정보가 포함된 파일이 발견되었습니다. 
+                        <strong className="text-red-600"> IMEI가 유출되었다면 더욱 심각한 문제</strong>가 될 수 있습니다. 일반적으로 통신사는 IMSI와 IMEI를 매칭하여 비정상 접속을 판단하기 때문입니다.
+                        IMEI까지 함께 유출된 경우, 복제 SIM으로 정상 단말기인 것처럼 위장하는 것이 더 용이해집니다.
                       </p>
 
                       <p className="text-sm text-slate-700 mt-3">
@@ -1054,7 +1085,8 @@ export default function AnalysisPage() {
                         </strong>
                         이 유출된 것으로, 통신사 입장에선 이를 무력화하려면
                         열쇠를 전부 교체(USIM 교체)하거나 자물쇠 구조를 바꾸는
-                        것(네트워크 인증체계 보강) 외엔 방법이 없습니다.
+                        것(네트워크 인증체계 보강) 외엔 방법이 없습니다. 
+                        2차 조사 결과는 이 문제가 더욱 복잡하고 심각할 수 있음을 시사합니다.
                       </p>
                     </div>
 
