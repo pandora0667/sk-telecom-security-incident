@@ -151,6 +151,41 @@ export default function Home() {
           </motion.div>
         </motion.section>
 
+        {/* KBS 2차 조사 결과 뉴스 영상 */}
+        <motion.section 
+          className="mb-16"
+          initial="hidden"
+          animate="show"
+          variants={staggerContainer}
+        >
+          <motion.div 
+            className="bg-white rounded-2xl shadow-lg p-8 border border-blue-100"
+            variants={fadeInUp}
+          >
+            <h2 className="text-2xl font-bold mb-4 text-blue-900 flex items-center gap-2">
+              <span className="bg-red-100 text-red-700 p-1.5 rounded-full">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m22 8-6 4 6 4V8Z"/><rect width="14" height="12" x="2" y="6" rx="2" ry="2"/></svg>
+              </span>
+              [현장영상] SKT &apos;이용자 유심 정보&apos; 2,600만 건 유출…악성코드 25종 확인
+            </h2>
+            <p className="text-muted-foreground mb-6 leading-relaxed">
+              SKT 해킹 사태로 유출된 이용자의 유심 정보가 SKT 전체 이용자 규모를 뛰어넘는 2천6백만 여건으로 드러났습니다. 민관합동조사단의 2차 조사 결과, 유출된 유심 정보는 9.82GB 규모, 가입자 식별키(IMSI) 기준으로는 2천695만 7,749건에 이르며, 단말기 고유식별번호(IMEI) 29만 1,831건과 개인정보가 포함된 파일이 발견되었습니다.
+            </p>
+            <div className="aspect-video w-full overflow-hidden rounded-xl border shadow-sm">
+              <iframe
+                src="https://www.youtube.com/embed/30_jXxL7LIc"
+                title="[현장영상] SKT '이용자 유심 정보' 2,600만 건 유출…악성코드 25종 확인"
+                className="w-full h-full"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
+            </div>
+            <div className="mt-4 text-xs text-muted-foreground text-right">
+              출처: <a href="https://youtu.be/30_jXxL7LIc?si=TOkWI-klA7sv6g_V" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">KBS 뉴스 (2025.05.19)</a>
+            </div>
+          </motion.div>
+        </motion.section>
+
         {/* SKT 공식 안내 영상 및 주요 정보 요약 카드 나란히 배치 (데스크탑) */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-16">
           {/* SKT 공식 안내 영상 */}
@@ -208,7 +243,11 @@ export default function Home() {
                   </span>
                   핵심 침해 정보
                 </h2>
-                <p className="text-muted-foreground mb-3 text-base leading-relaxed">HSS 인증 서버 3대에서 9.7GB 데이터 유출(25만 명분), 전화번호·IMSI·Ki 인증키 탈취</p>
+                <p className="text-muted-foreground mb-3 text-base leading-relaxed">
+                  1차 조사: HSS 인증 서버 3대에서 9.7GB 데이터 유출(25만 명분), 전화번호·IMSI·Ki 인증키 탈취, IMEI 유출 없음
+                  <br /><br />
+                  2차 조사: 감염서버 총 23대, 악성코드 25종 발견, 개인정보 서버 2대 감염 확인, IMEI 291,831건 포함 파일 발견
+                </p>
                 <Link href="/analysis" className="inline-flex items-center justify-center mt-auto px-4 py-2 bg-blue-600 text-white rounded-lg text-sm font-medium hover:bg-blue-700 transition-colors">
                   침해 분석 바로가기
                   <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 ml-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>

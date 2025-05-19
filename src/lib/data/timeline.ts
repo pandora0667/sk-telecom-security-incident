@@ -213,5 +213,14 @@ export const timelineData: TimelineEvent[] = [
     important: true,
     link: 'https://www.yna.co.kr/view/AKR20250511017951017',
     source: 'yna.co.kr'
+  },
+  {
+    date: '2025.05.19',
+    title: '민관합동조사단 2차 조사 결과 발표',
+    description: '4차에 걸친 BPFDoor 계열 악성코드 감염여부 집중 점검 결과, 현재까지 감염서버 총 23대, 악성코드 총 25종 확인 및 조치. 개인정보가 일정기간 임시로 관리되는 서버(2대)의 감염사실 확인. 단말기 고유식별번호(IMEI) 291,831건이 포함된 파일 발견.',
+    category: 'investigation',
+    important: true,
+    source: 'korea.kr',
+    link: 'https://www.korea.kr/briefing/pressReleaseView.do?newsId=156689587#pressRelease'
   }
 ]; 

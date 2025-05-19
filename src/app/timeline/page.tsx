@@ -141,61 +141,79 @@ export default function TimelinePage() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "ItemList",
-            "itemListElement": timelineData.slice(0, 10).map((event, index) => ({
-              "@type": "ListItem",
-              "position": index + 1,
-              "item": {
-                "@type": "NewsArticle",
-                "headline": event.title,
-                "datePublished": event.date.replace(/\./g, "-"),
-                "dateModified": event.date.replace(/\./g, "-"),
-                "articleBody": event.description,
-                "author": {
-                  "@type": "Organization",
-                  "name": "SK텔레콤 유심 해킹 사태 분석팀"
-                },
-                "publisher": {
-                  "@type": "Organization",
-                  "name": "SK텔레콤 유심 해킹 사태 분석",
-                  "logo": {
-                    "@type": "ImageObject",
-                    "url": "https://skt-hack.wisoft.io/skt-logo/SK-telecom_CMYK_EN.jpg",
-                    "width": "256",
-                    "height": "120"
-                  }
-                },
-                "keywords": [
-                  "SK텔레콤",
-                  "유심 해킹",
-                  event.category,
-                  "사이버 보안"
-                ],
-                "isAccessibleForFree": "True",
-                "mainEntityOfPage": {
-                  "@type": "WebPage",
-                  "@id": `https://skt-hack.wisoft.io/timeline#${event.date.replace(/\./g, "-")}`
-                }
-              }
-            })),
-            "name": "SK텔레콤 유심 해킹 사건 전체 타임라인",
-            "description": "2025년 4월 18일 발생한 SK텔레콤 유심 해킹 사건의 시간순 상세 내역입니다. 최초 침해부터 현재까지의 진행 상황을 확인하세요.",
-            "numberOfItems": timelineData.length,
-            "itemListOrder": "https://schema.org/ItemListOrderDescending",
-            "datePublished": "2025-05-15",
-            "dateModified": "2025-05-15",
+            "name": "SK텔레콤 유심 해킹 사태 타임라인",
+            "description": "SK텔레콤 유심 해킹 사태의 주요 사건과 대응 과정을 시간순으로 정리했습니다.",
+            "datePublished": "2025-05-05",
+            "dateModified": "2025-05-19",
             "publisher": {
               "@type": "Organization",
               "name": "SK텔레콤 유심 해킹 사태 분석",
-              "logo": {
-                "@type": "ImageObject",
-                "url": "https://skt-hack.wisoft.io/skt-logo/SK-telecom_CMYK_EN.jpg",
-                "width": "256",
-                "height": "120"
-              }
+              "url": "https://skt-hack.wisoft.io"
             },
-            "mainEntityOfPage": {
-              "@type": "WebPage",
-              "@id": "https://skt-hack.wisoft.io/timeline"
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "item": {
+                  "@type": "NewsArticle",
+                  "headline": "SK텔레콤 유심 해킹 사태 최초 발견",
+                  "datePublished": "2025-04-19",
+                  "articleBody": "SK텔레콤에서 유심(USIM) 정보가 유출된 해킹 사태가 발견되었습니다."
+                }
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "item": {
+                  "@type": "NewsArticle",
+                  "headline": "민관합동조사단 1차 조사 결과 발표",
+                  "datePublished": "2025-04-29",
+                  "articleBody": "공격 받은 정황이 있는 5대 서버 조사, 유심(USIM) 정보(전화번호, 가입자 식별키<IMSI> 등) 등 25종 유출, BPFDoor 계열 악성코드 4종 발견 및 피해확산 방지를 위해 기관⋅기업 공유, 단말기 고유식별번호(IMEI) 유출은 없었음"
+                }
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "item": {
+                  "@type": "NewsArticle",
+                  "headline": "민관합동조사단 2차 조사 결과 발표",
+                  "datePublished": "2025-05-19",
+                  "articleBody": "4차에 걸친 BPFDoor 계열 악성코드 감염여부 집중 점검 결과, 현재까지 감염서버 총 23대, 악성코드 총 25종 확인 및 조치. 개인정보가 일정기간 임시로 관리되는 서버(2대)의 감염사실 확인. 단말기 고유식별번호(IMEI) 291,831건이 포함된 파일 발견."
+                }
+              }
+            ],
+            "mainEntity": {
+              "@type": "Timeline",
+              "name": "SK텔레콤 유심 해킹 사태 타임라인",
+              "description": "2025년 4월부터 발생한 SK텔레콤 유심 해킹 사태의 주요 사건과 대응 과정을 시간순으로 정리했습니다.",
+              "about": {
+                "@type": "Thing",
+                "name": "SK텔레콤 유심 해킹 사태",
+                "description": "SK텔레콤의 유심(USIM) 정보가 해킹되어 유출된 사건"
+              },
+              "timeline": [
+                {
+                  "@type": "Event",
+                  "name": "SK텔레콤 유심 해킹 사태 최초 발견",
+                  "startDate": "2025-04-19",
+                  "endDate": "2025-04-19",
+                  "description": "SK텔레콤에서 유심(USIM) 정보가 유출된 해킹 사태가 발견되었습니다."
+                },
+                {
+                  "@type": "Event",
+                  "name": "민관합동조사단 1차 조사 결과 발표",
+                  "startDate": "2025-04-29",
+                  "endDate": "2025-04-29",
+                  "description": "공격 받은 정황이 있는 5대 서버 조사, 유심(USIM) 정보(전화번호, 가입자 식별키<IMSI> 등) 등 25종 유출, BPFDoor 계열 악성코드 4종 발견 및 피해확산 방지를 위해 기관⋅기업 공유, 단말기 고유식별번호(IMEI) 유출은 없었음"
+                },
+                {
+                  "@type": "Event",
+                  "name": "민관합동조사단 2차 조사 결과 발표",
+                  "startDate": "2025-05-19",
+                  "endDate": "2025-05-19",
+                  "description": "4차에 걸친 BPFDoor 계열 악성코드 감염여부 집중 점검 결과, 현재까지 감염서버 총 23대, 악성코드 총 25종 확인 및 조치. 개인정보가 일정기간 임시로 관리되는 서버(2대)의 감염사실 확인. 단말기 고유식별번호(IMEI) 291,831건이 포함된 파일 발견."
+                }
+              ]
             }
           })
         }}

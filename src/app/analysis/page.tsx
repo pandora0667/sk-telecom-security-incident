@@ -248,13 +248,11 @@ export default function AnalysisPage() {
                         주요 문제점
                       </h4>
                       <ul className="text-sm list-disc pl-5 space-y-1">
-                        <li>지난해 해킹 경고를 받고도 보안 예산을 줄인 의혹</li>
-                        <li>초기 축소 및 은폐 시도 논란</li>
-                        <li>소비자 피해 보상에 소극적 대응</li>
-                        <li>
-                          &quot;보안에 투자하는 것보다 과징금을 내는 것이
-                          이득&quot;이라는 경영진 발언 논란
-                        </li>
+                        <li>1차 조사: HSS 인증 서버 3대에서 9.7GB 데이터 유출(25만 명분), 전화번호·IMSI·Ki 인증키 탈취, IMEI 유출 없음</li>
+                        <li>2차 조사: 감염서버 총 23대, 악성코드 25종 발견, 개인정보 서버 2대 감염 확인, IMEI 291,831건 포함 파일 발견</li>
+                        <li>SKT의 지연된 신고와 미흡한 위기 대응</li>
+                        <li>고객 개인정보 유출에 대한 명확한 통지 지연</li>
+                        <li>유심 교체 과정에서의 혼란과 불편</li>
                       </ul>
                     </div>
                     <div className="bg-white rounded-lg p-4 border border-gray-200">

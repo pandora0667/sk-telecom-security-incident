@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://skt-hack.wisoft.io'),
   title: "SK텔레콤 유심 해킹 사태 종합 분석",
   description: "2025년 4월 발생한 SK텔레콤 유심 해킹 사태의 전체 정보를 제공합니다. 해킹 과정, 대응 조치, 고객 보호 방법을 확인하세요.",
   openGraph: {
