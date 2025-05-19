@@ -249,7 +249,7 @@ export default function TimelinePage() {
               <p className="text-base text-slate-700 leading-relaxed">
                 SK텔레콤(SKT) 유심 해킹 사건은 2025년 4월 중순 발생한 대규모 통신망 침해 사고로, 4월 18일에 처음 이상 징후가 감지되고 이후 고객 통신 인증정보 유출 사실이 확인되었습니다. 
                 해커들은 BPFdoor 악성코드를 이용해 SKT 내부망에 침투했으며, 핵심 통신장비인 HSS(Home Subscriber Server)에서 약 9.7GB의 유심 인증정보를 유출시켰습니다.
-                이 사건은 국내 통신 역사상 가장 큰 정보유출 사고 중 하나로, 정부 주도의 민관합동조사단이 구성되어 5월 8일 현재까지도 조사가 진행 중입니다.
+                이 사건은 국내 통신 역사상 가장 큰 정보유출 사고 중 하나로, 정부 주도의 민관합동조사단이 구성되어 현재까지도 조사가 진행 중입니다.
               </p>
             </div>
           </motion.div>
