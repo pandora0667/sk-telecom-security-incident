@@ -206,9 +206,9 @@ export const timelineData: TimelineEvent[] = [
     source: 'lastcard.tistory.com'
   },
   {
-    date: '2025.05.12',
+    date: '2025.05.11',
     title: 'SK텔레콤, 유심 재설정 설루션 도입',
-    description: 'SK텔레콤이 실물 유심 교체 없이 유심 일부 정보를 변경할 수 있는 \'유심 재설정\' 설루션을 도입했다고 발표. 이 방식은 유심에 존재하는 \'사용자 식별·인증 정보\' 일부를 새 정보로 변경하여 누군가 기존 유출된 유심 정보를 이용해 복제를 시도하더라도 시스템 접속이 차단되는 방식이다. 금융인증서나 티머니, 연락처 등의 재설정이 필요 없어 편의성이 향상됐다.',
+    description: 'SK텔레콤이 실물 유심 교체 없이 유심 일부 정보를 변경할 수 있는 \'유심 재설정(USIM 포맷)\' 설루션을 도입. 이 방식은 유심에 존재하는 \'사용자 식별 정보(IMSI)\'를 새 정보로 변경하여, 유출된 유심 정보로 복제를 시도해도 시스템 접속이 차단되도록 함. 기존 유심 교체와 달리 티머니, 금융인증서, 연락처 등 사용자 저장 정보가 유지되고 금융기관 재인증이 불필요하여 고객 편의성을 높임. 2025년 5월 11일 기준 유심 교체 완료 고객은 143만 명, 예약 완료 고객은 722만 명으로 집계.',
     category: 'response',
     important: true,
     link: 'https://www.yna.co.kr/view/AKR20250511017951017',
@@ -222,5 +222,13 @@ export const timelineData: TimelineEvent[] = [
     important: true,
     source: 'korea.kr',
     link: 'https://www.korea.kr/briefing/pressReleaseView.do?newsId=156689587#pressRelease'
+  },
+  {
+    date: '2025.05.26',
+    title: 'KT, LG유플러스 직접 점검 착수',
+    description: 'SKT 해킹 사건을 조사하고 있는 민관합동조사단이 KT와 LG유플러스의 해킹 피해 여부에 대해서도 직접 점검에 착수. BPF도어 악성코드를 사용한 SKT 해킹 집단이 국내 다른 통신사에도 사이버 공격을 시도했을 것이라는 추측에 따른 조치다. 조사단은 SKT의 서버 점검에 사용한 악성코드 변종 202종에 대한 백신을 KT와 LG유플러스 서버에 적용해 감염 여부를 조사하고 있다.',
+    category: 'government',
+    important: true,
+    source: '과학기술정보통신부'
   }
 ]; 

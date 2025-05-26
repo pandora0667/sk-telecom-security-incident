@@ -144,7 +144,7 @@ export default function TimelinePage() {
             "name": "SK텔레콤 유심 해킹 사태 타임라인",
             "description": "SK텔레콤 유심 해킹 사태의 주요 사건과 대응 과정을 시간순으로 정리했습니다.",
             "datePublished": "2025-05-05",
-            "dateModified": "2025-05-19",
+            "dateModified": "2025-05-26",
             "publisher": {
               "@type": "Organization",
               "name": "SK텔레콤 유심 해킹 사태 분석",
@@ -180,6 +180,16 @@ export default function TimelinePage() {
                   "datePublished": "2025-05-19",
                   "articleBody": "4차에 걸친 BPFDoor 계열 악성코드 감염여부 집중 점검 결과, 현재까지 감염서버 총 23대, 악성코드 총 25종 확인 및 조치. 개인정보가 일정기간 임시로 관리되는 서버(2대)의 감염사실 확인. 단말기 고유식별번호(IMEI) 291,831건이 포함된 파일 발견."
                 }
+              },
+              {
+                "@type": "ListItem",
+                "position": 4,
+                "item": {
+                  "@type": "NewsArticle",
+                  "headline": "KT, LG유플러스 직접 점검 착수",
+                  "datePublished": "2025-05-26",
+                  "articleBody": "SKT 해킹 사건을 조사하고 있는 민관합동조사단이 KT와 LG유플러스의 해킹 피해 여부에 대해서도 직접 점검에 착수. 조사단은 SKT의 서버 점검에 사용한 악성코드 변종 202종에 대한 백신을 적용해 감염 여부를 조사 중."
+                }
               }
             ],
             "mainEntity": {
@@ -212,6 +222,13 @@ export default function TimelinePage() {
                   "startDate": "2025-05-19",
                   "endDate": "2025-05-19",
                   "description": "4차에 걸친 BPFDoor 계열 악성코드 감염여부 집중 점검 결과, 현재까지 감염서버 총 23대, 악성코드 총 25종 확인 및 조치. 개인정보가 일정기간 임시로 관리되는 서버(2대)의 감염사실 확인. 단말기 고유식별번호(IMEI) 291,831건이 포함된 파일 발견."
+                },
+                {
+                  "@type": "Event",
+                  "name": "KT, LG유플러스 직접 점검 착수",
+                  "startDate": "2025-05-26",
+                  "endDate": "2025-05-26",
+                  "description": "SKT 해킹 사건을 조사하고 있는 민관합동조사단이 KT와 LG유플러스의 해킹 피해 여부에 대해서도 직접 점검에 착수. 조사단은 SKT의 서버 점검에 사용한 악성코드 변종 202종에 대한 백신을 적용해 감염 여부를 조사 중."
                 }
               ]
             }
@@ -248,8 +265,9 @@ export default function TimelinePage() {
               </h2>
               <p className="text-base text-slate-700 leading-relaxed">
                 SK텔레콤(SKT) 유심 해킹 사건은 2025년 4월 중순 발생한 대규모 통신망 침해 사고로, 4월 18일에 처음 이상 징후가 감지되고 이후 고객 통신 인증정보 유출 사실이 확인되었습니다. 
-                해커들은 BPFdoor 악성코드를 이용해 SKT 내부망에 침투했으며, 핵심 통신장비인 HSS(Home Subscriber Server)에서 약 9.7GB의 유심 인증정보를 유출시켰습니다.
-                이 사건은 국내 통신 역사상 가장 큰 정보유출 사고 중 하나로, 정부 주도의 민관합동조사단이 구성되어 현재까지도 조사가 진행 중입니다.
+                정부와 SKT는 즉각 대응에 나서 민관합동조사단 구성, 전국민 대상 유심 무상 교체, USIM 보호서비스 자동 적용 등 조치를 시행했으며, 5월 11일에는 유심 재설정(USIM 포맷) 설루션을 도입하여 고객 편의성을 높였습니다.
+                최근 5월 26일에는 민관합동조사단이 KT와 LG유플러스에 대한 직접 점검에 착수하여 국가 통신망 전체에 대한 보안 검증이 이루어지고 있습니다.
+                현재(2025.05.26 기준) 약 143만 명이 유심 교체를 완료했으며, 추가 722만 명이 예약을 마친 상태입니다.
               </p>
             </div>
           </motion.div>

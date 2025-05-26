@@ -412,110 +412,134 @@ export default function ResponsePage() {
                         이 조치로 유심 재고 부족 문제를 완화하고, 고객 편의성을 높였습니다. 임봉호 SKT MNO 사업부장은 &quot;다음 주부터 유심 재고량이 부족해서 교체를 못 하는 일은 없을 것&quot;이라며, 
                         유심 재설정과 교체를 병행하여 고객 상황에 맞는 선택이 가능하다고 밝혔습니다.
                       </p>
+
+                      <div className="bg-white rounded-lg border border-blue-100 p-5 mt-5">
+                        <h5 className="text-md font-semibold text-blue-700 mb-3">
+                          유심 재설정의 기술적 원리
+                        </h5>
+
+                        <p className="text-sm text-slate-700 leading-relaxed mb-4">
+                          유심 재설정은 <strong>통신사 전산상에서 해당 고객에 대한 IMSI(국제 이동가입자 식별번호)를 무작위 값으로 교체하고, 
+                          유심에 해당 IMSI를 변경하는 방식</strong>으로 작동합니다. 이는 마치 주민등록번호를 재발급받는 것과 유사한 개념으로, 
+                          기존 IMSI가 유출되었더라도 새로운 IMSI로 변경함으로써 유출된 정보를 무용지물로 만드는 원리입니다.
+                        </p>
+
+                        <div className="mb-4">
+                          <h6 className="text-sm font-medium text-blue-700 mb-2">
+                            유심 재설정 vs 유심 교체 비교
+                          </h6>
+                          <div className="overflow-x-auto">
+                            <table className="min-w-full text-sm text-left text-slate-700">
+                              <thead className="bg-blue-50">
+                                <tr>
+                                  <th className="px-3 py-2 border border-blue-100">구분</th>
+                                  <th className="px-3 py-2 border border-blue-100">ICCID</th>
+                                  <th className="px-3 py-2 border border-blue-100">IMSI</th>
+                                  <th className="px-3 py-2 border border-blue-100">Ki(인증키)</th>
+                                  <th className="px-3 py-2 border border-blue-100">사용자 데이터</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td className="px-3 py-2 border border-blue-100 font-medium">유심 교체/eSIM 발급</td>
+                                  <td className="px-3 py-2 border border-blue-100 text-center text-red-600">변경</td>
+                                  <td className="px-3 py-2 border border-blue-100 text-center text-red-600">변경</td>
+                                  <td className="px-3 py-2 border border-blue-100 text-center text-red-600">변경</td>
+                                  <td className="px-3 py-2 border border-blue-100 text-center text-red-600">손실</td>
+                                </tr>
+                                <tr>
+                                  <td className="px-3 py-2 border border-blue-100 font-medium">유심 재설정(포맷)</td>
+                                  <td className="px-3 py-2 border border-blue-100 text-center text-green-600">유지</td>
+                                  <td className="px-3 py-2 border border-blue-100 text-center text-red-600">변경</td>
+                                  <td className="px-3 py-2 border border-blue-100 text-center text-green-600">유지</td>
+                                  <td className="px-3 py-2 border border-blue-100 text-center text-green-600">유지</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                          <p className="text-xs text-slate-500 mt-2">
+                            * ICCID: 유심카드 식별번호, IMSI: 국제 이동가입자 식별번호, Ki: 가입자 인증키
+                          </p>
+                        </div>
+
+                        <p className="text-sm text-slate-700 leading-relaxed mb-4">
+                          기술적 관점에서, 유심 교체가 &apos;비밀번호(Ki)&apos;를 교체하는 개념이라면, 유심 재설정은 &apos;아이디(IMSI)&apos;를 변경하는 
+                          방식으로 볼 수 있습니다. 통신사에서는 가입자 인증 시 IMSI와 Ki를 함께 확인하기 때문에, Ki가 유출되었더라도 
+                          IMSI가 변경되면 해당 유출 정보는 더 이상 사용할 수 없게 됩니다.
+                        </p>
+
+                        <div>
+                          <h6 className="text-sm font-medium text-blue-700 mb-2">
+                            IMSI 구조 및 제약
+                          </h6>
+                          <div className="grid grid-cols-1 md:grid-cols-4 gap-2 text-sm">
+                            <div className="bg-blue-50 p-2 rounded-lg border border-blue-100 font-medium text-center">
+                              IMSI 구조
+                            </div>
+                            <div className="bg-blue-50 p-2 rounded-lg border border-blue-100 text-center">
+                              MCC (국가코드)<br />
+                              <span className="text-xs">450 (한국)</span>
+                            </div>
+                            <div className="bg-blue-50 p-2 rounded-lg border border-blue-100 text-center">
+                              MNC (통신사코드)<br />
+                              <span className="text-xs">05 (SK텔레콤)</span>
+                            </div>
+                            <div className="bg-blue-50 p-2 rounded-lg border border-blue-100 text-center">
+                              MSIN (가입자 식별번호)<br />
+                              <span className="text-xs">최대 10자리</span>
+                            </div>
+                          </div>
+                          <p className="text-xs text-slate-700 mt-3 leading-relaxed">
+                            IMSI는 국가코드(MCC)와 통신사 코드(MNC)를 제외하면 변경 가능한 부분이 최대 10자리로, Ki에 비해 
+                            길이가 짧습니다. 또한 IMSI는 가입자마다 고유해야 하므로, 다수의 사용자가 IMSI를 동시에 중복 없이 
+                            교체하는 알고리즘을 개발하고 검증하는 데 시간이 소요되었을 것으로 추정됩니다.
+                          </p>
+                        </div>
+                      </div>
+
+                      <div className="bg-amber-50 rounded-lg border border-amber-100 p-5 mt-5">
+                        <h5 className="text-md font-semibold text-amber-800 mb-3 flex items-center">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-2">
+                            <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z" />
+                            <line x1="12" y1="9" x2="12" y2="13" />
+                            <line x1="12" y1="17" x2="12.01" y2="17" />
+                          </svg>
+                          유심 재설정의 한계점과 고려사항
+                        </h5>
+
+                        <div className="space-y-3 text-sm text-slate-700">
+                          <p className="leading-relaxed">
+                            유심 재설정은 빠르고 편리한 대안이지만, 일부 보안 전문가들은 다음과 같은 한계점을 지적합니다:
+                          </p>
+
+                          <ul className="list-disc pl-5 space-y-2">
+                            <li>
+                              <strong className="text-amber-700">IMSI 노출 가능성</strong>: 국내 환경에서는 IMSI가 평문으로 전송되기 때문에, 
+                              숙련된 공격자라면 근거리에서 LTESniffer와 같은 도구를 사용해 새로운 IMSI를 탐지할 가능성이 있습니다.
+                            </li>
+                            <li>
+                              <strong className="text-amber-700">Ki 유지의 문제</strong>: Ki 값은 변경되지 않기 때문에, 공격자가 새로운 IMSI를 
+                              알아내고 이미 유출된 Ki를 사용할 경우 다시 취약해질 수 있습니다.
+                            </li>
+                            <li>
+                              <strong className="text-amber-700">기술적 제약</strong>: ICCID는 물리적 유심마다 고유하게 존재하는 값으로 교체가 불가능하며, 
+                              Ki 값은 보안 목적상 유심 생산 후에는 읽거나 재설정할 수 없도록 설계되어 있습니다.
+                            </li>
+                          </ul>
+
+                          <p className="mt-3 leading-relaxed">
+                            이러한 제약에도 불구하고, SK텔레콤은 OTA(Over The Air) 기술을 활용한 IMSI 재설정이 유심 교체에 따른 불편함을 최소화하면서도 
+                            보안성을 강화할 수 있는 현실적 대안이라고 평가하고 있습니다. 이론적으로는 원격으로도 가능하지만, 보안 강화를 위해 
+                            대리점 방문을 통한 본인 확인 절차를 포함하는 방식을 선택했습니다.
+                          </p>
+                          
+                          <p className="leading-relaxed">
+                            2025년 5월 11일 기준 유심 교체 완료 고객은 143만 명, 유심 교체 예약 완료 고객은 722만 명으로 집계되었습니다. 
+                            SK텔레콤은 향후 유심 재설정 대상을 확대하는 한편, eSIM 활성화도 적극 추진할 계획이라고 밝혔습니다.
+                          </p>
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                </div>
-                
-                {/* 4.2 대응 과정의 문제점과 비판 */}
-                <div className="mt-10">
-                  <h3 className="text-xl font-bold text-purple-900 mb-3" id="response-issues">대응 과정의 문제점과 비판</h3>
-                  
-                  <div className="pl-4 border-l-4 border-purple-200 py-1">
-                    <p className="mb-6 leading-relaxed">
-                      그러나 이러한 대응에도 불구하고 여러 문제점과 비판이 제기되었습니다. 주요 이슈들을 짚어보면:
-                    </p>
-                    
-                    <div className="space-y-6">
-                      <div className="bg-amber-50 p-5 rounded-lg border border-amber-100">
-                        <h4 className="font-semibold text-amber-800 mb-3">이상 징후의 사전 탐지와 예방 부족</h4>
-                        <p className="text-sm text-slate-700 leading-relaxed">
-                          SKT는 4월 18일에 비로소 대규모 트래픽 이상을 발견했는데, 이는 이미 수많은 데이터가 빠져나간 사후 탐지에 가깝습니다. 
-                          공격자는 그 전에 한동안 내부망에 숨어 있었던 것으로 보이는데, 실시간 이상행위 탐지 체계의 부재나 
-                          핵심 서버 접근 통제 미흡으로 초기 침입을 놓쳤다는 지적이 있습니다. 
-                          HSS 같은 핵심 DB에 접근이 발생할 때 <strong className="text-red-600">이상징후(예: 평소보다 많은 쿼리)</strong>를 
-                          감지하는 시스템이 있었더라면 피해를 줄였을 수 있습니다.
-                        </p>
-                        <p className="text-sm text-slate-700 leading-relaxed mt-2">
-                          이 부분에 대해 업계 전문가들은 <em>&quot;SKT의 핵심망에 대한 보안 모니터링이 안이했다&quot;</em>고 평가하며 
-                          예방적 통합보안 관제 부재를 꼬집었습니다.
-                        </p>
-                      </div>
-                      
-                      <div className="bg-amber-50 p-5 rounded-lg border border-amber-100">
-                        <h4 className="font-semibold text-amber-800 mb-3">사고 초기 대응과 정보 공개의 지연</h4>
-                        <p className="text-sm text-slate-700 leading-relaxed">
-                          SKT는 18일 내부 파악 후 22일에 언론 공개하여 4일간 공백이 있었습니다. 
-                          이 기간 동안 고객 대다수는 해킹 사실을 모르고 있었고, SKT도 개별 통지나 경고 메시지를 보내지 않았습니다. 
-                          결국 언론보도가 나온 뒤에야 많은 고객이 알게 되어 패닉 상태가 커졌습니다. 
-                          정부 측도 <em>&quot;해킹 사실을 알리기까지 시간이 걸려 국민 불안이 커졌다&quot;</em>며 아쉬움을 표했습니다.
-                        </p>
-                        <p className="text-sm text-slate-700 leading-relaxed mt-2">
-                          SKT는 22일 T월드 공지사항에 사고 소식을 올렸지만, 정작 이를 문자나 이메일로 개별 통보하지 않았습니다. 
-                          개인정보보호법상 1천명 이상 정보유출 시 지체없이 통지 의무가 있는데, 형식적 공지만 한 셈입니다. 
-                          이 때문에 개인정보위가 5월 2일 <em>&quot;가입자별 즉각 통지&quot;</em>를 요구하기에 이르렀습니다. 
-                          초동 소통 부족으로 루머와 과장 정보가 퍼져 더 큰 혼란을 낳았다는 비판이 있습니다.
-                        </p>
-                      </div>
-                      
-                      <div className="bg-amber-50 p-5 rounded-lg border border-amber-100">
-                        <h4 className="font-semibold text-amber-800 mb-3">USIM 교체 실행상의 혼란</h4>
-                        <p className="text-sm text-slate-700 leading-relaxed">
-                          4월 28일부터 시작된 대규모 USIM 교체 작업은 현실적으로 엄청난 물량과 인력이 필요했습니다. 
-                          초기에는 대리점마다 교체 수요가 폭주하여 재고가 동나는 곳이 속출했습니다. 
-                          일부 고객들은 먼 대리점을 찾아다녀야 했고, 대기줄이 길어 불편이 컸습니다. 
-                          또한 eSIM 단말기(내장형 SIM)나 특수 단말기(키즈폰 등)는 현장에서 즉시 교체가 어려워, 
-                          일부 고객은 기다려야 하는 상황도 있었습니다.
-                        </p>
-                        <p className="text-sm text-slate-700 leading-relaxed mt-2">
-                          SKT는 온라인 예약 등을 유도했으나 초기공지 부족으로 몰랐던 고객도 많았습니다. 
-                          또한 5월 초 황금연휴 기간(5/5 어린이날 등)에 대리점이 문을 닫거나 인력이 부족해 교체 공백이 생긴 점도 
-                          아쉬움으로 남았습니다. 결과적으로 SKT는 5월 1일 과기정통부의 권고에 따라 일반 신규업무 중단까지 하며 
-                          교체에 집중했지만, 사전 시뮬레이션 부족으로 인한 현장 혼란은 피하지 못했습니다.
-                        </p>
-                      </div>
-                      
-                      <div className="bg-amber-50 p-5 rounded-lg border border-amber-100">
-                        <h4 className="font-semibold text-amber-800 mb-3">USIM 보호서비스 안내 미흡과 부작용</h4>
-                        <p className="text-sm text-slate-700 leading-relaxed">
-                          USIM 보호서비스를 전원 적용한 것은 좋은 조치였지만, 이에 대한 고객 공지와 이해도 제고가 충분하지 않았습니다. 
-                          많은 이용자들이 이 서비스의 기능을 몰라 &quot;이게 뭔지 해제해야 하나&quot; 혼란을 겪었고, 
-                          일부는 해외로밍이 안 될까봐 걱정했습니다. 실제로 이 서비스는 해외에서 현지 단말기에 심카드를 옮겨쓰는 경우 등에 
-                          불편을 줄 수 있습니다. (IMEI가 바뀌면 접속 차단되므로, 해외여행 시 현지폰에 갈아끼우는 것이 제한됨.)
-                        </p>
-                        <p className="text-sm text-slate-700 leading-relaxed mt-2">
-                          또한 향후 서비스 해지 시 영업점 방문 필요 등 번거로운 절차도 뒤늦게 알려져 불만이 있었습니다. 
-                          SKT는 <em>&quot;사실상 유심 교체와 동일한 보안 효과&quot;</em>라고 홍보했으나, 고객 입장에서 사전에 그런 서비스를 
-                          몰랐던 이들은 권리 제한처럼 느낄 수 있어 충분한 사전 설명이 필요했습니다.
-                        </p>
-                      </div>
-                      
-                      <div className="bg-amber-50 p-5 rounded-lg border border-amber-100">
-                        <h4 className="font-semibold text-amber-800 mb-3">컨트롤타워 및 책임 논란</h4>
-                        <p className="text-sm text-slate-700 leading-relaxed">
-                          이 사건 대응에서 SKT 내부적으로 보안사고 비상대응 컨트롤타워가 제대로 가동되었는지 의문이 제기됩니다. 
-                          초기 고객 안내 부재, 대리점 현장 혼란 등을 봤을 때, 전사적 위기관리팀의 지휘가 미흡했다는 평가입니다. 
-                          또한 통신망 보안 투자에 대한 경영진 인식 부족, 사전에 LG유플러스 해킹(2023) 교훈을 살리지 못한 점도 
-                          도마에 올랐습니다.
-                        </p>
-                        <p className="text-sm text-slate-700 leading-relaxed mt-2">
-                          업계 전반적으로 민간 자율에 맡긴 통신망 보안의 한계가 드러났고, 정부 개입의 필요성이 거론되었습니다. 
-                          이런 문제점들에 대해 SKT는 사과하며 개선 의지를 보였지만, 이미 신뢰 훼손은 피할 수 없었습니다. 
-                          실제 4월 19~20일 사이 SKT 번호 해지자가 평소 대비 크게 증가했고, 인터넷 커뮤니티에는 
-                          SKT 보안 역량에 대한 비판 여론이 확산되었습니다.
-                        </p>
-                        <p className="text-sm text-slate-700 leading-relaxed mt-2">
-                          전문가들은 &quot;통신사도 금융권 수준의 강력한 보안규제가 필요하다&quot;, 
-                          <em>&quot;이통3사가 비용 문제로 보안 투자를 소홀히 한 측면이 있다&quot;</em>고 지적했습니다.
-                        </p>
-                      </div>
-                    </div>
-                    
-                    <p className="mt-6 leading-relaxed">
-                      정리하면, SKT는 사후대응 측면에서 할 수 있는 대부분의 기술적 조치를 취했으나, 
-                      사전 예방과 초기 대응, 고객대응 프로세스에서 허점이 드러났습니다. 
-                      이는 비단 SKT만의 문제가 아니라 국내 주요 기간망 사업자의 공통 과제로 인식되었으며, 
-                      후속 섹션에서 다룰 정부와 업계의 대책 논의로 이어졌습니다.
-                    </p>
                   </div>
                 </div>
               </div>
@@ -727,6 +751,64 @@ export default function ResponsePage() {
                         <p className="text-sm text-slate-700 leading-relaxed mt-2">
                           KISA 등의 권고사항은 사실상 <strong className="text-blue-700">&quot;이런 해킹이 다시 발생하지 않도록 하라&quot;</strong>는 가이드라인으로, 
                           통신사들은 이를 토대로 보안투자를 확대할 압력을 받게 되었습니다.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* 5.3 국가 통신망 전수조사 확대 */}
+                <div className="mt-10">
+                  <h3 className="text-xl font-bold text-purple-900 mb-3" id="national-telecom-audit">국가 통신망 전수조사 확대</h3>
+                  
+                  <div className="pl-4 border-l-4 border-purple-200 py-1">
+                    <div className="space-y-6">
+                      <div className="bg-indigo-50 p-5 rounded-lg border border-indigo-100">
+                        <h4 className="font-semibold text-indigo-800 mb-3">KT, LG유플러스 직접 점검 착수 (2025.05.26)</h4>
+                        <p className="text-sm text-slate-700 leading-relaxed">
+                          2025년 5월 26일, SKT 해킹 사건을 조사하고 있는 민관합동조사단이 KT와 LG유플러스의 해킹 피해 여부에 대해서도 
+                          직접 점검에 착수했습니다. 이는 BPF도어 악성코드를 사용한 SKT 해킹 집단이 국내 다른 통신사에도 사이버 공격을 
+                          시도했을 것이라는 추측에 따른 선제적 조치입니다.
+                        </p>
+                        <p className="text-sm text-slate-700 leading-relaxed mt-2">
+                          과학기술정보통신부는 지난 5월 12일 통신·플랫폼사 보안 점검 태스크포스(TF)를 구성해 
+                          사이버 공격 취약점을 점검 중이라고 밝혔습니다. 조사단은 SKT의 서버 점검에 사용한 
+                          <strong className="text-indigo-700"> 악성코드 변종 202종</strong>에 대한 백신을 
+                          KT와 LG유플러스 서버에 적용해 감염된 곳이 있는지 면밀히 조사하고 있습니다.
+                        </p>
+                      </div>
+                      
+                      <div className="bg-white p-5 rounded-lg border border-indigo-100">
+                        <h4 className="font-semibold text-indigo-800 mb-3">국가 통신망 전수조사의 의미</h4>
+                        <p className="text-sm text-slate-700 leading-relaxed">
+                          한국인터넷진흥원(KISA) 등 보안 전문가로 구성된 점검 인력이 두 통신사 서버를 대상으로 
+                          SKT 해킹 사고 조사 방식에서 사용된 악성코드 검출 방법을 적용하고 있습니다. 
+                          이는 국가 핵심 인프라인 통신망에 대한 포괄적 보안 점검이라는 점에서 의미가 큽니다.
+                        </p>
+                        <p className="text-sm text-slate-700 leading-relaxed mt-2">
+                          조사단은 <em>&quot;KT와 LG유플러스에 대한 점검을 최대한 신속하게 마무리할 계획이며 
+                          국민 피해가 있을 수 있는 정황이 발견되는 즉시 투명하게 공개하고 침해 사고 처리 
+                          절차에 따라 조치할 것&quot;</em>이라고 설명했습니다.
+                        </p>
+                        <p className="text-sm text-slate-700 leading-relaxed mt-2">
+                          다만 현재까지 조사에서 KT와 LG유플러스에 대한 해킹 특이점은 발견되지 않은 것으로 알려졌습니다. 
+                          과기정통부는 <em>&quot;현재까지 조사에서 특이점은 발견되지 않았다&quot;</em>며 <em>&quot;국민들의 불안 해소를 위해 
+                          상호 협의 하에 참여한 것&quot;</em>이라고 설명했습니다.
+                        </p>
+                      </div>
+                      
+                      <div className="bg-green-50 p-5 rounded-lg border border-green-100">
+                        <h4 className="font-semibold text-green-800 mb-3">통신3사 협력 강화 방안</h4>
+                        <p className="text-sm text-slate-700 leading-relaxed">
+                          이번 전수조사를 계기로 통신3사는 사이버 보안 정보 공유체계를 강화하고 
+                          공동 대응 매뉴얼을 마련하기로 했습니다. 특히 BPF도어와 같은 스텔스 백도어 
+                          탐지를 위한 통합 모니터링 시스템 구축도 검토 중입니다.
+                        </p>
+                        <p className="text-sm text-slate-700 leading-relaxed mt-2">
+                          과기정통부는 정기적인 통신망 보안 점검을 의무화하는 법안도 추진하며, 
+                          앞으로는 연 1회 이상 통신사 핵심 인프라에 대한 정밀 보안 진단을 
+                          실시할 계획이라고 밝혔습니다. 이는 국가 통신망 보안 체계의 근본적 강화를 
+                          위한 조치로 평가됩니다.
                         </p>
                       </div>
                     </div>
