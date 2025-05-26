@@ -656,6 +656,212 @@ export default function AnalysisPage() {
                   </div>
                 </div>
 
+                {/* 초기 침투: 웹셸 기반 침투 (추정) */}
+                <div className="mt-8">
+                  <h3 className="text-xl font-bold text-purple-900 mb-3">
+                    초기 침투: 웹셸 기반 침투 (추정)
+                  </h3>
+                  <div className="pl-4 border-l-4 border-purple-200 py-1">
+                    <p className="mb-4 leading-relaxed">
+                      민관 합동조사단의 2차 조사에서 가장 주목받고 있는 침투 방안은 웹셸을 통한 공격입니다. 조사단은 BPF도어 외에도 웹셸 악성코드 1종을 추가로 발견했으며, 이것이 2022년 6월 최초 공격의 핵심 수단이었을 것으로 추정하고 있습니다. 웹셸은 웹 서버의 취약점을 이용해 공격자가 원격에서 서버를 제어하고 명령을 실행할 수 있도록 만든 악성 스크립트 파일로, 해커가 SKT 서버를 최초 침입하는 과정에서 내부 권한을 획득하고 백도어 악성코드인 BPF도어를 설치하는 발판 역할을 했습니다.
+                    </p>
+
+                    <p className="mb-4 leading-relaxed">
+                      보안 전문가들은 웹셸 공격이 망분리 환경에서도 효과적인 침투 수단이 될 수 있다고 분석합니다. 이는 &quot;망분리 환경에서도 80/443 웹 포트는 거의 유일한 통로&quot;이기 때문이며, DMZ에서 내부망으로 향하는 연결은 웹서비스 정도만 열려있는 경우가 많아 공격자가 웹셸·RCE를 노려 침투·측면이동하는 주요 원인이 됩니다.
+                    </p>
+
+                    <p className="mb-4 leading-relaxed">
+                      웹셸 공격의 구체적인 시나리오를 보면, 공격자는 WebLogic, Tomcat, 혹은 자체 웹앱 취약점을 악용하여 HSS 관리 또는 관련 웹 서버 중 취약 버전에 침투한 후, curl -F file=@shell.jsp 같은 방식으로 웹셸을 업로드하거나 RCE 익스플로잇을 사용했을 것으로 추정됩니다.
+                    </p>
+                  </div>
+                </div>
+
+                {/* 초기 침투: SAP 넷위버 애플리케이션 취약점 */}
+                <div className="mt-8">
+                  <h3 className="text-xl font-bold text-purple-900 mb-3">
+                    초기 침투: SAP 넷위버 애플리케이션 취약점 (추정)
+                  </h3>
+                  <div className="pl-4 border-l-4 border-purple-200 py-1">
+                    <p className="mb-4 leading-relaxed">
+                      한국인터넷진흥원(KISA)이 발견한 또 다른 중요한 침투 경로는 SAP의 &apos;넷위버&apos;에서 파일 업로드 취약점입니다. SAP는 전사지원관리(ERP) 전문 소프트웨어 기업으로 통합 실행 플랫폼 넷위버를 제공하며, SKT는 2000년부터 SAP의 ERP를 도입해 현재 S/4HANA라는 ERP 제품을 프라이빗 클라우드 환경에서 사용하고 있습니다.
+                    </p>
+
+                    <p className="mb-4 leading-relaxed">
+                      보안 전문가들은 &quot;SKT가 구축한 프라이빗 클라우드가 단일 포트로만 구축된 완전한 폐쇄망이 아니라면 외부 공격에 노출될 가능성이 있다&quot;고 분석합니다. 특히 SAP의 피오리 포털은 스마트폰과 PC 등 개인 디바이스에서 접근할 수 있어 더욱 해킹에 취약합니다. 이 경우 웹 통신 규약인 HTTP 포트를 열어야 하기 때문에 해커 입장에서는 공격 표면이 추가로 확보되는 셈입니다.
+                    </p>
+
+                    <p className="mb-4 leading-relaxed">
+                      KISA는 SAP코리아의 권고에 따라 4월 중 넷위버에 최신 보안 패치를 적용했으며, 넷위버는 국내에서 구형 ERP 시스템을 사용하는 일부 기업만 사용 중인 것으로 확인됩니다.
+                    </p>
+                  </div>
+                </div>
+
+                {/* 초기 침투: 리눅스 커널 권한 상승 취약점 */}
+                <div className="mt-8">
+                  <h3 className="text-xl font-bold text-purple-900 mb-3">
+                    초기 침투: 리눅스 커널 권한 상승 취약점 (추정)
+                  </h3>
+                  <div className="pl-4 border-l-4 border-purple-200 py-1">
+                    <p className="mb-4 leading-relaxed">
+                      KISA는 리눅스 커널에서 발생하는 권한 상승 취약점(CVE-2025-21756)에 대한 보안 공지를 발표했는데, 이 취약점이 SKT 해킹과 연관될 가능성이 제기되고 있습니다. 이 취약점은 일반 사용자 권한만으로도 시스템 최고 권한인 &apos;루트(root)&apos; 접근을 가능하게 만드는 심각한 보안 결함입니다.
+                    </p>
+
+                    <p className="mb-4 leading-relaxed">
+                      루트 권한을 획득한 공격자는 서버 내부를 마음껏 조작할 수 있으며, 이 상태에서는 BPF도어 같은 백도어를 설치하는 것도 어렵지 않습니다. SKT 서버에 설치된 BPF도어 역시 이 권한 상승 취약점을 활용해 심어졌을 가능성이 있으며, 업계 관계자는 &quot;SKT 해킹은 단일 침입경로가 아닌 웹, 커널, 계정관리 등 다층 방어 체계가 동시에 무너진 시나리오를 배제할 수 없다&quot;고 분석했습니다.
+                    </p>
+
+                    {/* CVE-2025-21756 상세 정보 */}
+                    <div className="bg-amber-50 border border-amber-100 rounded-lg p-4 my-6">
+                      <h4 className="text-amber-800 font-semibold mb-2 flex items-center">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="18"
+                          height="18"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          className="mr-2"
+                        >
+                          <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
+                        </svg>
+                        CVE-2025-21756: Linux 커널 vsock 서브시스템의 권한 상승 취약점
+                      </h4>
+
+                      <div className="space-y-3 text-sm text-slate-700">
+                        <p className="leading-relaxed">
+                          이 취약점은 2025년 2월 27일에 공개된 Linux 커널의 Virtual Socket(vsock) 구현에서 발견된 심각한 보안 취약점으로, CVSS v3.1 기준 7.8점의 높은 위험도를 가지고 있습니다. 특히 가상화 환경과 컨테이너 기반 인프라에서 중요한 보안 위험을 초래할 수 있으며, 실제 익스플로잇 코드가 이미 공개되어 있어 즉각적인 대응이 필요한 상황입니다.
+                        </p>
+
+                        <div className="mt-4">
+                          <p className="font-medium text-amber-800 mb-2">1. 취약점 발생 메커니즘</p>
+                          <p className="leading-relaxed mb-2">
+                            이 취약점은 Linux 커널의 vsock(Virtual Socket) 구현에서 소켓 바인딩과 전송 재할당 과정 중 발생하는 메모리 관리 오류로 인해 발생합니다. 소켓이 바인딩된 상태에서 전송 계층이 재할당될 때 소켓의 참조 카운트가 올바르게 관리되지 않아 use-after-free 조건이 발생합니다.
+                          </p>
+                          <p className="leading-relaxed">
+                            구체적으로는 다음과 같은 단계로 진행됩니다:
+                          </p>
+                          <ul className="list-disc pl-5 space-y-1 mt-1 mb-2">
+                            <li>
+                              <code className="bg-amber-100 px-1 py-0.5 rounded mx-1 text-red-600">vsock_create()</code> 함수가 호출되어 참조 카운트가 1로 설정되고, <code className="bg-amber-100 px-1 py-0.5 rounded mx-1 text-red-600">vsock_insert_unbound()</code> 함수를 통해 참조 카운트가 2로 증가
+                            </li>
+                            <li>
+                              <code className="bg-amber-100 px-1 py-0.5 rounded mx-1 text-red-600">transport{'->'} release()</code> 함수가 소켓의 바인딩 상태를 확인하지 않고 <code className="bg-amber-100 px-1 py-0.5 rounded mx-1 text-red-600">vsock_remove_bound()</code>를 호출하여 참조 카운트가 1로 감소
+                            </li>
+                            <li>
+                              <code className="bg-amber-100 px-1 py-0.5 rounded mx-1 text-red-600">vsock_bind()</code> 함수가 소켓이 언바인딩 리스트에 있다고 가정하고 작업을 수행하면서 참조 카운트가 0이 되어 메모리 해제
+                            </li>
+                            <li>
+                              해제된 메모리를 이후에 다시 접근하는 use-after-free 상황 발생
+                            </li>
+                          </ul>
+                          <p className="text-xs text-slate-600 bg-amber-100 p-2 rounded">
+                            커널 주소 살균제(KASAN)는 <code>__vsock_bind+0x62e/0x730</code> 함수에서 이미 해제된 메모리 주소 <code>ffff88816b46a74c</code>에 접근하는 slab-use-after-free 오류를 보고했습니다.
+                          </p>
+                        </div>
+
+                        <div className="mt-4">
+                          <p className="font-medium text-amber-800 mb-2">2. 위험성 및 영향</p>
+                          <p className="leading-relaxed">
+                            이 취약점은 다음과 같은 심각한 보안 위험을 초래합니다:
+                          </p>
+                          <ul className="list-disc pl-5 space-y-1 mt-1">
+                            <li>
+                              <span className="font-semibold">권한 상승 위험</span>: 로컬 공격자가 일반 사용자 권한으로 시스템의 루트 권한을 획득할 수 있음
+                            </li>
+                            <li>
+                              <span className="font-semibold">시스템 제어권 탈취</span>: 루트 권한을 통해 백도어 설치, 무단 데이터 접근, 시스템 조작 가능
+                            </li>
+                            <li>
+                              <span className="font-semibold">가상화 환경 위협</span>: vsock은 가상 머신과 호스트 간 통신 기술로, 클라우드 인프라에서 특히 위험
+                            </li>
+                            <li>
+                              <span className="font-semibold">악용 용이성</span>: 낮은 공격 복잡성과 이미 공개된 익스플로잇 코드로 인해 실제 공격 가능성이 높음
+                            </li>
+                          </ul>
+                        </div>
+
+                        <div className="mt-4">
+                          <p className="font-medium text-amber-800 mb-2">3. 영향을 받는 시스템</p>
+                          <p className="leading-relaxed mb-2">
+                            다음 커널 버전이 이 취약점에 취약합니다:
+                          </p>
+                          <ul className="list-disc pl-5 space-y-1 mt-1">
+                            <li>Linux 커널 6.6.79 미만</li>
+                            <li>Linux 커널 6.12.16 미만</li>
+                            <li>Linux 커널 6.13.4 미만</li>
+                            <li>Linux 커널 6.14-rc1 미만</li>
+                            <li>일반적으로 Linux 커널 5.5 이상부터 영향을 받음</li>
+                          </ul>
+                          
+                          <p className="leading-relaxed mt-2">
+                            주요 배포판 영향:
+                          </p>
+                          <ul className="list-disc pl-5 space-y-1 mt-1">
+                            <li>Ubuntu 20.04 LTS, 22.04 LTS</li>
+                            <li>Debian bullseye, bookworm</li>
+                            <li>Red Hat Enterprise Linux 8 및 파생 배포판</li>
+                            <li>Amazon Linux 2023, Kernel-5.10 Extra, Kernel-5.15 Extra</li>
+                          </ul>
+                        </div>
+
+                        <div className="mt-4">
+                          <p className="font-medium text-amber-800 mb-2">4. 해결 방안</p>
+                          <p className="leading-relaxed">
+                            다음과 같은 조치를 통해 이 취약점에 대응할 수 있습니다:
+                          </p>
+                          <ul className="list-disc pl-5 space-y-1 mt-1">
+                            <li>
+                              <span className="font-semibold">패치 적용</span>: Linux 커널 6.6.79, 6.12.16, 6.13.4, 6.14-rc1 이상으로 업그레이드
+                            </li>
+                            <li>
+                              <span className="font-semibold">기술적 수정</span>: 소켓 바인딩이 소켓 소멸까지 유지되도록 보장하는 패치 적용
+                            </li>
+                            <li>
+                              <span className="font-semibold">임시 완화책</span>: vsock 모듈 사용 중단 또는 비활성화
+                            </li>
+                            <li>
+                              <span className="font-semibold">클라우드 환경</span>: 클라우드 서비스 제공업체의 보안 공지 및 패치 확인
+                            </li>
+                          </ul>
+                        </div>
+
+                        <div className="bg-red-50 border border-red-100 rounded p-3 mt-4">
+                          <p className="text-red-700 font-medium flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-2">
+                              <path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+                              <line x1="12" y1="9" x2="12" y2="13"/>
+                              <line x1="12" y1="17" x2="12.01" y2="17"/>
+                            </svg>
+                            SK텔레콤 사건과의 연관성
+                          </p>
+                          <p className="text-sm text-slate-700 mt-1">
+                            SK텔레콤 침해 사고의 시기와 vsock 취약점 공개 시점을 고려할 때, 공격자들이 이 취약점의 알려지지 않은 변종이나 유사한 권한 상승 취약점을 사용했을 가능성이 있습니다. 특히 공격자가 초기 침투 이후 시스템 내부에서 권한을 상승시키고 BPFDoor를 설치하는 과정에서, 이와 같은 커널 취약점이 활용되었을 것으로 추정됩니다.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* 초기 침투: 다중 벡터 침투 시나리오 */}
+                <div className="mt-8">
+                  <h3 className="text-xl font-bold text-purple-900 mb-3">
+                    초기 침투: 다중 벡터 침투 시나리오 (추정)
+                  </h3>
+                  <div className="pl-4 border-l-4 border-purple-200 py-1">
+                    <p className="mb-4 leading-relaxed">
+                      전문가들은 이번 SKT 해킹이 단일 침투 경로가 아닌 다중 벡터를 통한 복합적 공격일 가능성이 높다고 보고 있습니다. 한 업계 전문가는 &quot;피싱 이메일과 웹서버 취약점으로 이전부터 침입한 것 같다&quot;며 &quot;긴 시간에 걸쳐 단계적으로 접근 권한을 높이면서 HSS에 접근 가능했을 것&quot;이라고 분석했습니다.
+                    </p>
+
+                    <p className="mb-4 leading-relaxed">
+                      보안 분석가들이 제시한 가설적 침투 시나리오를 종합하면, 공격자는 먼저 &quot;인터넷 노출된 웹 서비스를 발판 삼아 HSS 서버에 침투하고, BPFDoor를 설치하여 장기 거점을 확보했을 개연성이 높다&quot;고
+                    </p>
+                  </div>
+                </div>
+
                 {/* 2.2 악성코드: BPFDoor 백도어의 설치와 은밀한 동작 */}
                 <div className="mt-10">
                   <h3
