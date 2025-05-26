@@ -857,7 +857,7 @@ export default function AnalysisPage() {
                     </p>
 
                     <p className="mb-4 leading-relaxed">
-                      보안 분석가들이 제시한 가설적 침투 시나리오를 종합하면, 공격자는 먼저 &quot;인터넷 노출된 웹 서비스를 발판 삼아 HSS 서버에 침투하고, BPFDoor를 설치하여 장기 거점을 확보했을 개연성이 높다&quot;고
+                      보안 분석가들이 제시한 가설적 침투 시나리오를 종합하면, 공격자는 먼저 &quot;인터넷 노출된 웹 서비스를 발판 삼아 HSS 서버에 침투하고, BPFDoor를 설치하여 장기 거점을 확보했을 개연성이 높다&quot;고 평가됩니다. 이후 낮은 권한의 웹서버 계정(tomcat, www-data)으로 시스템 내부에 진입한 후, SUID 파일, 커널 버그, sudo misconfig 등을 악용하여 root 권한을 확보하고, 최종적으로 BPF도어를 업로드 및 실행하여 HSS DB에 접근해 자료를 탈취했을 것으로 추정됩니다.
                     </p>
                   </div>
                 </div>
