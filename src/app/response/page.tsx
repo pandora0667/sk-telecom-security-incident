@@ -1413,6 +1413,139 @@ export default function ResponsePage() {
             </div>
           </motion.section>
 
+          {/* 8. 위약금 면제 논란 */}
+          <motion.section
+            variants={fadeInUp}
+            className="mb-12"
+          >
+            <div className="bg-white rounded-xl shadow-md p-6 md:p-8 border border-blue-100">
+              <h2 className="text-2xl font-bold text-blue-900 mb-5 flex items-center gap-2">
+                <span className="bg-red-100 text-red-700 p-2 rounded-full">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                </span>
+                위약금 면제 논란 및 정부 대응
+              </h2>
+
+              <div className="text-slate-700 space-y-6">
+                <p className="leading-relaxed">
+                  SKT 해킹 사고 이후 가장 뜨거운 쟁점 중 하나는 고객들의 위약금 면제 요구와 이에 대한 정부 및 SKT의 대응입니다. 
+                  유출된 개인정보로 인한 불안감으로 통신사를 변경하려는 고객들이 증가하면서, 위약금 면제 여부가 핵심 이슈로 부상했습니다.
+                </p>
+
+                {/* 8.1 정부 대응 연기 */}
+                <div className="mt-8">
+                  <h3 className="text-xl font-bold text-purple-900 mb-3" id="penalty-exemption-controversy">정부 대응 연기 및 검토 상황 (2025.06.18)</h3>
+                  
+                  <div className="pl-4 border-l-4 border-purple-200 py-1 space-y-5">
+                    <div className="bg-red-50 p-5 rounded-lg border border-red-100">
+                      <h4 className="font-semibold text-red-800 mb-3">과기정통부 판단 연기 검토</h4>
+                                             <p className="text-sm text-slate-700 leading-relaxed">
+                         2025년 6월 18일, 과학기술정보통신부가 SKT 해킹 사고에 대한 <strong className="text-red-700">위약금 면제 여부 판단을 6월 말을 넘겨 연기하는 방안을 검토 중</strong>이라고 밝혔습니다. 
+                         강도현 과기정통부 2차관은 최근 이훈기 더불어민주당 의원실에 &quot;민관합동조사단 최종 조사결과 발표 시 위약금 면제에 대한 입장 포함 여부를 검토 중&quot;이라고 답변했습니다.
+                       </p>
+                       <p className="text-sm text-slate-700 leading-relaxed mt-2">
+                         앞서 과기정통부는 &quot;조사단의 결과를 보고 위약금 면제 여부를 판단하겠다, 시간을 끌지 않겠다&quot;며 6월 말 발표를 예고했으나, 
+                         법적 복잡성과 경제적 파급효과를 고려해 신중한 접근을 하고 있는 것으로 보입니다.
+                       </p>
+                    </div>
+                    
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div className="bg-blue-50 p-5 rounded-lg border border-blue-100">
+                        <h4 className="font-semibold text-blue-800 mb-3">SKT 입장: 최대 7조원 손실 우려</h4>
+                                                 <p className="text-sm text-slate-700 leading-relaxed">
+                           유영상 SKT 대표는 위약금 면제 시 <strong className="text-blue-700">3년간 최대 7조원의 매출 손실</strong>이 예상된다며 
+                           사실상 어렵다는 입장을 표명했습니다. 그러나 &quot;과기부가 법률적 판단을 해 조치한다면 따를 수밖에 없다&quot;고 밝혀 
+                           최종 결정권이 정부에 있음을 인정했습니다.
+                         </p>
+                      </div>
+                      
+                      <div className="bg-orange-50 p-5 rounded-lg border border-orange-100">
+                        <h4 className="font-semibold text-orange-800 mb-3">정치권 압박: 과기부 책임론</h4>
+                                                 <p className="text-sm text-slate-700 leading-relaxed">
+                           정치권에서는 과기정통부가 SKT 이용약관을 승인한 만큼 제43조 제4항 
+                           <em>&quot;회사의 귀책 사유로 해지할 경우 위약금을 면제한다&quot;</em>는 조항이 이번 사태에 적용되는지 
+                           빠르게 판단해야 한다고 지적하고 있습니다.
+                         </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* 8.2 법적 쟁점 */}
+                <div className="mt-10">
+                  <h3 className="text-xl font-bold text-purple-900 mb-3" id="legal-issues">법적 쟁점 및 전문가 의견</h3>
+                  
+                  <div className="pl-4 border-l-4 border-purple-200 py-1">
+                    <div className="space-y-6">
+                      <div className="bg-yellow-50 p-5 rounded-lg border border-yellow-100">
+                        <h4 className="font-semibold text-yellow-800 mb-3">SKT 면책 조항의 해석</h4>
+                                                 <p className="text-sm text-slate-700 leading-relaxed">
+                           SKT 이용약관 제22조 제1항은 사이버 침해 사고 시 <strong className="text-yellow-700">&apos;선량한 관리자의 주의의무&apos;</strong>를 
+                           다한 경우 회사가 책임을 지지 않는다고 명시했습니다. 법령상 기준을 준수했을 때도 면책됩니다. 
+                           즉 SKT가 개인정보 유출을 막기 위한 기술적·관리적 보호조치를 하고 법상 의무사항을 모두 따랐다면 
+                           &apos;귀책 사유가 있다&apos;고 보기 어려울 수 있습니다.
+                         </p>
+                         <p className="text-sm text-slate-700 leading-relaxed mt-2">
+                           또한 &apos;회사 귀책 시 위약금 면제&apos; 조항도 주로 통신서비스 제공이 불가능한 경우에 적용돼 
+                           이번 사태와 연관성이 낮다는 지적도 있습니다.
+                         </p>
+                      </div>
+                      
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div className="bg-gray-50 p-5 rounded-lg border border-gray-100">
+                          <h4 className="font-semibold text-gray-800 mb-3">정부 개입 한계론</h4>
+                                                     <p className="text-sm text-slate-700 leading-relaxed">
+                             한 대형로펌 변호사는 &quot;이용약관은 기업과 이용자 간의 계약&quot;이라며 
+                             &quot;과기정통부가 이용약관을 신고받긴 하지만 법에 명시적 근거가 없다면 사인 간의 계약에 관여하는 건 쉽지 않다&quot;고 말했습니다. 
+                             대신 &quot;소비자가 위약금을 낸 후 SKT를 상대로 위약금 반환청구 소송을 하는 것이 적절하다&quot;고 제안했습니다.
+                           </p>
+                        </div>
+                        
+                        <div className="bg-green-50 p-5 rounded-lg border border-green-100">
+                          <h4 className="font-semibold text-green-800 mb-3">정부 개입 가능론</h4>
+                                                     <p className="text-sm text-slate-700 leading-relaxed">
+                             김진욱 법무법인 주원 변호사는 &quot;정부가 &apos;위약금을 받지 말라&apos;고 강제하는 건 어렵지만 
+                             약관이 이용자의 권리행사를 부당하게 막는다고 판단해 <strong className="text-green-700">약관 개정에 대한 시정조치</strong>를 내릴 수 있다&quot;고 말했습니다.
+                           </p>
+                           <p className="text-sm text-slate-700 leading-relaxed mt-2">
+                             구태언 법무법인 린 테크그룹 총괄 변호사도 &quot;해당 약관의 부당성에 대한 유권해석을 내리거나 
+                             통신사의 자율적인 시정을 유도하고, 필요시 공정거래위원회 등과 협력해 문제해결을 모색하는 등 
+                             법리적 한계와 정책적 책임을 동시에 고려해야 한다&quot;고 강조했습니다.
+                           </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* 8.3 향후 전망 */}
+                <div className="mt-10">
+                  <h3 className="text-xl font-bold text-purple-900 mb-3" id="future-outlook">향후 전망 및 과제</h3>
+                  
+                  <div className="pl-4 border-l-4 border-purple-200 py-1">
+                    <div className="bg-indigo-50 rounded-lg border border-indigo-100 p-5">
+                      <h4 className="text-lg font-semibold text-indigo-800 mb-3">정부의 딜레마와 과제</h4>
+                      <p className="text-sm text-slate-700 leading-relaxed">
+                        과기정통부는 과거 사이버 침해 사고 발생 시 위약금 면제 시정조치를 내린 사례가 없는 데다, 
+                        법조계 의견도 엇갈려 신중한 접근을 하고 있습니다. 위약금 면제를 강제할 경우 
+                        <strong className="text-indigo-700">민간 계약에 대한 정부 개입</strong>이라는 비판을, 
+                        면제하지 않을 경우 <strong className="text-indigo-700">소비자 보호 의무 소홀</strong>이라는 비판을 받을 수 있는 상황입니다.
+                      </p>
+                                             <p className="text-sm text-slate-700 leading-relaxed mt-2">
+                         과기정통부 관계자는 &quot;조사가 마무리돼야 다음 단계의 판단이 가능해 조사에 집중하고 있다&quot;고 답했으나, 
+                         정치권과 시민사회의 압박이 지속되고 있어 조만간 명확한 입장 표명이 불가피할 것으로 보입니다.
+                       </p>
+                      <p className="text-sm text-slate-700 leading-relaxed mt-2">
+                        이번 사태를 계기로 통신사 개인정보 유출 시 위약금 처리에 대한 명확한 법적 기준 마련과 
+                        소비자 보호 체계 강화가 필요하다는 목소리가 높아지고 있습니다.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.section>
+
           {/* 관련 페이지 링크 */}
           <motion.div
             variants={fadeInUp}
