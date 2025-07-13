@@ -47,7 +47,7 @@ export default function ResponsePage() {
             "description": "SK텔레콤의 유심 해킹 사태에 대한 대응 조치와 정부 및 산업계의 후속 대응을 정리했습니다.",
             "totalTime": "PT30M",
             "datePublished": "2025-05-05",
-            "dateModified": "2025-05-15",
+            "dateModified": "2025-07-04",
             "author": {
               "@type": "Organization",
               "name": "SK텔레콤 유심 해킹 사태 분석",
@@ -77,6 +77,12 @@ export default function ResponsePage() {
                 "name": "USIM 교체 신청 방법",
                 "text": "유심 교체 신청, 유심 보호 서비스 신청 및 설정 방법, 교통카드 및 eSIM 관련 정보, 부가 서비스 등 추가 보안 조치에 대한 안내가 제공됩니다.",
                 "url": "https://skt-hack.wisoft.io/response#usim-replacement"
+              },
+              {
+                "@type": "HowToStep", 
+                "name": "민관합동조사단 최종 조사결과",
+                "text": "2025년 7월 4일 과기정통부가 발표한 최종 조사결과와 위약금 면제 확정 내용이 포함되어 있습니다.",
+                "url": "https://skt-hack.wisoft.io/response#final-investigation"
               }
             ]
           })
@@ -103,53 +109,6 @@ export default function ResponsePage() {
               SK텔레콤의 유심 해킹 사태에 대한 대응 조치와 정부 및 산업계의 후속 대응을 정리했습니다.
             </p>
           </motion.div>
-
-          {/* 대응 개요 섹션 */}
-          <motion.section
-            variants={fadeInUp}
-            className="mb-12"
-          >
-            <div className="bg-white rounded-xl shadow-md p-6 md:p-8 border border-blue-100">
-              <h2 className="text-2xl font-bold text-blue-900 mb-5 flex items-center gap-2">
-                <span className="bg-blue-100 text-blue-700 p-2 rounded-full">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 12V7H5a2 2 0 0 1 0-4h14v4"/><path d="M3 5v14a2 2 0 0 0 2 2h16v-5"/><path d="M18 12v4"/></svg>
-                </span>
-                대응 조치 개요
-              </h2>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="bg-blue-50 rounded-xl shadow-sm border border-blue-100 overflow-hidden">
-                  <div className="bg-blue-100 px-5 py-3 border-b border-blue-200">
-                    <h3 className="font-semibold text-blue-800">즉시 대응 조치</h3>
-                  </div>
-                  <div className="p-5">
-                    <ul className="list-disc list-inside space-y-3 text-slate-700">
-                      <li>침입 경로 차단 및 시스템 격리</li>
-                      <li>KISA 및 관계기관 신고</li>
-                      <li>전 고객 대상 유심 무상 교체 프로그램</li>
-                      <li>USIM 보호서비스 자동 적용</li>
-                      <li>고객 대상 보안 경고 발령</li>
-                    </ul>
-                  </div>
-                </div>
-
-                <div className="bg-purple-50 rounded-xl shadow-sm border border-purple-100 overflow-hidden">
-                  <div className="bg-purple-100 px-5 py-3 border-b border-purple-200">
-                    <h3 className="font-semibold text-purple-800">장기적 대응 방안</h3>
-                  </div>
-                  <div className="p-5">
-                    <ul className="list-disc list-inside space-y-3 text-slate-700">
-                      <li>네트워크 보안 강화 및 전수 점검</li>
-                      <li>HSS 구조 개편 및 인증키 분산 관리</li>
-                      <li>AI 기반 이상징후 탐지 시스템 도입</li>
-                      <li>위기 커뮤니케이션 체계 구축</li>
-                      <li>통신망 보안 제도 및 규제 개편</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </motion.section>
 
           {/* SKT 공식 안내 영상 */}
           <motion.section
@@ -241,6 +200,392 @@ export default function ResponsePage() {
                     <a href="https://www.tworld.co.kr/web/support/store/map" target="_blank" rel="noopener noreferrer" className="text-xs bg-blue-100 text-blue-700 px-3 py-1 rounded-full hover:bg-blue-200 transition-colors">
                       유심 교체 가능 매장 찾기
                     </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.section>
+
+          {/* 민관합동조사단 최종 조사결과 (2025.7.4) */}
+          <motion.section
+            variants={fadeInUp}
+            className="mb-12"
+          >
+            <div className="bg-white rounded-xl shadow-md p-6 md:p-8 border border-red-200 ring-2 ring-red-100">
+              <div className="flex items-center justify-between mb-6">
+                <h2 className="text-2xl font-bold text-red-900 flex items-center gap-2">
+                  <span className="bg-red-100 text-red-700 p-2 rounded-full">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+                  </span>
+                  민관합동조사단 최종 조사결과
+                </h2>
+                <div className="bg-red-100 text-red-700 px-3 py-1 rounded-full text-sm font-medium">
+                  2025.7.4 발표
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <div className="bg-red-50 rounded-xl shadow-sm border border-red-100 overflow-hidden">
+                  <div className="bg-red-100 px-5 py-3 border-b border-red-200">
+                    <h3 className="font-semibold text-red-800">조사 규모</h3>
+                  </div>
+                  <div className="p-5">
+                    <div className="space-y-3">
+                      <div className="flex justify-between items-center">
+                        <span className="text-sm text-slate-600">전체 서버 점검</span>
+                        <span className="font-semibold text-red-700">42,605대</span>
+                      </div>
+                      <div className="flex justify-between items-center">
+                        <span className="text-sm text-slate-600">감염 서버</span>
+                        <span className="font-semibold text-red-700">28대</span>
+                      </div>
+                      <div className="flex justify-between items-center">
+                        <span className="text-sm text-slate-600">악성코드 종류</span>
+                        <span className="font-semibold text-red-700">33종</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="bg-orange-50 rounded-xl shadow-sm border border-orange-100 overflow-hidden">
+                  <div className="bg-orange-100 px-5 py-3 border-b border-orange-200">
+                    <h3 className="font-semibold text-orange-800">정보유출 규모</h3>
+                  </div>
+                  <div className="p-5">
+                    <div className="space-y-3">
+                      <div className="flex justify-between items-center">
+                        <span className="text-sm text-slate-600">유출 정보 종류</span>
+                        <span className="font-semibold text-orange-700">25종</span>
+                      </div>
+                      <div className="flex justify-between items-center">
+                        <span className="text-sm text-slate-600">유출 용량</span>
+                        <span className="font-semibold text-orange-700">9.82GB</span>
+                      </div>
+                      <div className="flex justify-between items-center">
+                        <span className="text-sm text-slate-600">IMSI 기준</span>
+                        <span className="font-semibold text-orange-700">2,696만건</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-green-50 rounded-xl shadow-sm border border-green-100 overflow-hidden">
+                <div className="bg-green-100 px-5 py-3 border-b border-green-200">
+                  <h3 className="font-semibold text-green-800">주요 조사 결과</h3>
+                </div>
+                <div className="p-5">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                      <h4 className="text-sm font-medium text-green-700 mb-2">확인된 문제점</h4>
+                      <ul className="text-sm text-slate-700 list-disc pl-5 space-y-1">
+                        <li>계정정보 관리 부실</li>
+                        <li>과거 침해사고(&apos;22.2월) 대응 미흡</li>
+                        <li>주요 정보 암호화 조치 미흡</li>
+                        <li>침해사고 신고 지연 및 미신고</li>
+                        <li>자료보전 명령 위반</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h4 className="text-sm font-medium text-green-700 mb-2">위약금 면제 결정</h4>
+                      <div className="bg-white p-3 rounded-lg border border-green-200">
+                        <p className="text-sm text-slate-700 leading-relaxed">
+                          <strong className="text-green-700">SK텔레콤 과실 인정</strong>하여 이용약관 제43조 
+                          위약금 면제 규정 적용 가능하다고 판단
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-6 bg-blue-50 rounded-lg border border-blue-100 p-4">
+                <h4 className="font-semibold text-blue-800 mb-2">악성코드 상세 분석</h4>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
+                  <div className="text-center">
+                    <div className="font-medium text-blue-700">BPFDoor</div>
+                    <div className="text-slate-600">27종</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="font-medium text-blue-700">타이니쉘</div>
+                    <div className="text-slate-600">3종</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="font-medium text-blue-700">웹쉘</div>
+                    <div className="text-slate-600">1종</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="font-medium text-blue-700">오픈소스</div>
+                    <div className="text-slate-600">2종</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.section>
+
+
+
+          {/* 최종 조사결과 상세 분석 */}
+          <motion.section
+            variants={fadeInUp}
+            className="mb-12"
+          >
+            <div className="bg-white rounded-xl shadow-md p-6 md:p-8 border border-blue-100">
+              <h2 className="text-2xl font-bold text-blue-900 mb-5 flex items-center gap-2">
+                <span className="bg-indigo-100 text-indigo-700 p-2 rounded-full">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 12l2 2 4-4"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5c0-1.66 4-3 9-3s9 1.34 9 3"/><path d="M21 12v7c0 1.66-4 3-9 3s-9-1.34-9-3v-7"/><path d="M21 5v7c0 1.66-4 3-9 3s-9-1.34-9-3V5"/></svg>
+                </span>
+                민관합동조사단 최종 조사결과 상세 분석
+              </h2>
+
+              <div className="text-slate-700 space-y-8">
+                <div className="bg-gradient-to-r from-red-50 to-orange-50 rounded-lg border border-red-200 p-6">
+                  <h3 className="text-xl font-bold text-red-900 mb-4">침해사고 타임라인 (확정)</h3>
+                  
+                  <div className="relative">
+                    <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-red-200"></div>
+                    
+                    <div className="space-y-6">
+                      <div className="flex items-start space-x-4">
+                        <div className="flex-shrink-0 w-8 h-8 bg-red-100 rounded-full flex items-center justify-center">
+                          <span className="text-red-700 font-bold text-sm">1</span>
+                        </div>
+                        <div>
+                          <h4 className="font-semibold text-red-800">2021.8.6 - 초기 침투</h4>
+                          <p className="text-sm text-slate-700 mt-1">
+                            시스템 관리망 내 서버A에 악성코드(CrossC2) 설치. 
+                            계정정보가 평문으로 저장되어 있었고, 공격자가 이를 활용해 타 서버로 침투
+                          </p>
+                        </div>
+                      </div>
+                      
+                      <div className="flex items-start space-x-4">
+                        <div className="flex-shrink-0 w-8 h-8 bg-red-100 rounded-full flex items-center justify-center">
+                          <span className="text-red-700 font-bold text-sm">2</span>
+                        </div>
+                        <div>
+                          <h4 className="font-semibold text-red-800">2021.12.24 - HSS 침투</h4>
+                          <p className="text-sm text-slate-700 mt-1">
+                            음성통화인증(HSS) 관리서버 침투 및 BPFDoor 설치. 
+                            HSS와 HSS 관리서버 모두 감염 완료
+                          </p>
+                        </div>
+                      </div>
+                      
+                      <div className="flex items-start space-x-4">
+                        <div className="flex-shrink-0 w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center">
+                          <span className="text-orange-700 font-bold text-sm">3</span>
+                        </div>
+                        <div>
+                          <h4 className="font-semibold text-orange-800">2022.2.23 - 첫 번째 발견 기회</h4>
+                          <p className="text-sm text-slate-700 mt-1">
+                            SKT가 비정상 재부팅으로 악성코드 감염 서버 발견했으나, 
+                            <strong className="text-orange-700">신고 의무 위반</strong> 및 
+                            <strong className="text-orange-700">불완전한 조사</strong>로 HSS 침해 놓침
+                          </p>
+                        </div>
+                      </div>
+                      
+                      <div className="flex items-start space-x-4">
+                        <div className="flex-shrink-0 w-8 h-8 bg-red-100 rounded-full flex items-center justify-center">
+                          <span className="text-red-700 font-bold text-sm">4</span>
+                        </div>
+                        <div>
+                          <h4 className="font-semibold text-red-800">2022.6.15 - 고객 관리망 침투</h4>
+                          <p className="text-sm text-slate-700 mt-1">
+                            시스템 관리망을 통해 고객 관리망 내 서버 침투, 
+                            웹쉘 및 BPFDoor 추가 설치로 거점 확보
+                          </p>
+                        </div>
+                      </div>
+                      
+                      <div className="flex items-start space-x-4">
+                        <div className="flex-shrink-0 w-8 h-8 bg-red-100 rounded-full flex items-center justify-center">
+                          <span className="text-red-700 font-bold text-sm">5</span>
+                        </div>
+                        <div>
+                          <h4 className="font-semibold text-red-800">2025.4.18 - 정보유출 실행</h4>
+                          <p className="text-sm text-slate-700 mt-1">
+                            <strong className="text-red-700">HSS 3개 서버</strong>에서 유심정보 
+                            <strong className="text-red-700">9.82GB (2,696만건)</strong> 유출. 
+                            장기간 미변경된 계정 정보 활용
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="bg-red-50 rounded-lg border border-red-100 p-5">
+                    <h3 className="text-lg font-semibold text-red-800 mb-3">SK텔레콤 과실 사항</h3>
+                    <ul className="space-y-2 text-sm text-slate-700">
+                      <li className="flex items-start">
+                        <span className="text-red-600 mr-2">•</span>
+                        <span><strong>계정정보 관리 부실:</strong> 서버 계정 정보를 평문으로 저장</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-red-600 mr-2">•</span>
+                        <span><strong>과거 침해사고 대응 미흡:</strong> 2022년 발견 시 신고 의무 위반</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-red-600 mr-2">•</span>
+                        <span><strong>암호화 조치 미흡:</strong> 유심 인증키(Ki) 평문 저장</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-red-600 mr-2">•</span>
+                        <span><strong>신고 지연:</strong> 24시간 초과 신고 (과태료 부과)</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-red-600 mr-2">•</span>
+                        <span><strong>자료보전 명령 위반:</strong> 서버 2대 임의 조치</span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div className="bg-green-50 rounded-lg border border-green-100 p-5">
+                    <h3 className="text-lg font-semibold text-green-800 mb-3">재발방지 대책</h3>
+                    <ul className="space-y-2 text-sm text-slate-700">
+                      <li className="flex items-start">
+                        <span className="text-green-600 mr-2">•</span>
+                        <span><strong>계정 보안 강화:</strong> 비밀번호 암호화, 다중인증 도입</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-green-600 mr-2">•</span>
+                        <span><strong>주요 정보 암호화:</strong> 유심 인증키(Ki) 등 암호화 저장</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-green-600 mr-2">•</span>
+                        <span><strong>거버넌스 강화:</strong> CISO 최고경영자 직속 조직 운영</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-green-600 mr-2">•</span>
+                        <span><strong>인력·예산 확대:</strong> 타사 수준 이상 정보보호 투자</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-green-600 mr-2">•</span>
+                        <span><strong>EDR·백신 확대:</strong> 전 서버 보안 솔루션 도입</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div className="bg-blue-50 rounded-lg border border-blue-100 p-5">
+                  <h3 className="text-lg font-semibold text-blue-800 mb-3">추가 발견 사항</h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                      <h4 className="font-medium text-blue-700 mb-2">공급망 보안 취약</h4>
+                      <p className="text-sm text-slate-700">
+                        협력업체 소프트웨어 88대 설치 시 악성코드 1종 유입 확인 
+                        (실행 흔적 없음, 이번 사고와 무관)
+                      </p>
+                    </div>
+                    <div>
+                      <h4 className="font-medium text-blue-700 mb-2">기타 정보 유출 가능성</h4>
+                      <p className="text-sm text-slate-700">
+                        IMEI, 통신기록(CDR) 등이 일부 서버에 평문 저장되어 있었으나, 
+                        로그 기록이 남은 기간에는 유출 정황 없음
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.section>
+
+          {/* 위약금 면제 확정 발표 */}
+          <motion.section
+            variants={fadeInUp}
+            className="mb-12"
+          >
+            <div className="bg-white rounded-xl shadow-md p-6 md:p-8 border border-green-200 ring-2 ring-green-100">
+              <h2 className="text-2xl font-bold text-green-900 mb-5 flex items-center gap-2">
+                <span className="bg-green-100 text-green-700 p-2 rounded-full">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 12l2 2 4-4"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5c0-1.66 4-3 9-3s9 1.34 9 3"/><path d="M21 12v7c0 1.66-4 3-9 3s-9-1.34-9-3v-7"/><path d="M21 5v7c0 1.66-4 3-9 3s-9-1.34-9-3V5"/></svg>
+                </span>
+                위약금 면제 확정 발표
+              </h2>
+
+              <div className="text-slate-700 space-y-6">
+                <div className="bg-green-50 rounded-lg border border-green-100 p-6">
+                  <h3 className="text-xl font-bold text-green-800 mb-4">
+                    과기정통부 최종 판단: 위약금 면제 규정 적용 가능
+                  </h3>
+                  <p className="text-sm text-slate-700 leading-relaxed mb-4">
+                    과학기술정보통신부는 2025년 7월 4일 발표한 최종 조사결과에서 
+                    <strong className="text-green-700">SK텔레콤의 과실이 인정되며, 
+                    이용약관 제43조 위약금 면제 규정이 적용 가능</strong>하다고 공식 발표했습니다.
+                  </p>
+                  
+                  <div className="bg-white rounded-lg border border-green-200 p-4">
+                    <h4 className="font-semibold text-green-800 mb-2">SK텔레콤 이용약관 제43조 (위약금 면제)</h4>
+                    <p className="text-sm text-slate-600 italic">
+                      &quot;다음 각호의 경우에는 제42조 제1항에 의한 위약금 납부 의무가 면제됩니다.<br/>
+                      4. 회사의 귀책 사유로 인해 해지할 경우&quot;
+                    </p>
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="bg-red-50 rounded-lg border border-red-100 p-5">
+                    <h3 className="text-lg font-semibold text-red-800 mb-3">SK텔레콤 과실 인정 근거</h3>
+                    <ul className="space-y-2 text-sm text-slate-700">
+                      <li className="flex items-start">
+                        <span className="text-red-600 mr-2">①</span>
+                        <span>유심정보 보호를 위한 <strong>주의의무를 다하지 않음</strong></span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-red-600 mr-2">②</span>
+                        <span>정보통신망법 등 <strong>관련 법령 미준수</strong></span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-red-600 mr-2">③</span>
+                        <span>안전한 통신서비스 제공이라는 <strong>계약상 주된 의무 위반</strong></span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-red-600 mr-2">④</span>
+                        <span>유심정보 유출로 인한 <strong>심각한 보안 위험 초래</strong></span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div className="bg-blue-50 rounded-lg border border-blue-100 p-5">
+                    <h3 className="text-lg font-semibold text-blue-800 mb-3">법률 자문 결과</h3>
+                    <div className="space-y-3 text-sm text-slate-700">
+                      <div>
+                        <h4 className="font-medium text-blue-700">1차 법률 자문 (4개 기관)</h4>
+                        <p>SK텔레콤 과실 인정 시 위약금 면제 적용 가능</p>
+                      </div>
+                      <div>
+                        <h4 className="font-medium text-blue-700">2차 법률 자문 (5개 기관)</h4>
+                        <p>4개 기관이 위약금 면제 적용 가능 의견, 1개 기관 판단 유보</p>
+                      </div>
+                      <div className="bg-white rounded-lg border border-blue-200 p-3">
+                        <p className="text-xs text-slate-600">
+                          ※ 다만, 이번 판단은 SK텔레콤 약관과 이번 침해사고에 한정되며, 
+                          모든 사이버 침해사고가 위약금 면제 대상이 아님을 명확히 함
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="bg-yellow-50 rounded-lg border border-yellow-100 p-5">
+                  <h3 className="text-lg font-semibold text-yellow-800 mb-3">위약금 면제 적용 절차</h3>
+                  <div className="space-y-3 text-sm text-slate-700">
+                    <p>
+                      과기정통부의 이번 발표는 <strong className="text-yellow-700">위약금 면제 규정 적용이 가능</strong>하다는 
+                      유권해석으로, 실제 면제 여부는 고객이 해지 시 SKT의 약관 적용을 통해 이루어집니다.
+                    </p>
+                    <div className="bg-white rounded-lg border border-yellow-200 p-3">
+                      <h4 className="font-medium text-yellow-800 mb-2">고객 행동 가이드</h4>
+                      <ol className="text-xs text-slate-600 space-y-1">
+                        <li>1. 통신사 변경 원할 시 SKT 고객센터 또는 매장 방문</li>
+                        <li>2. 해킹 사고로 인한 해지 의사 명확히 표현</li>
+                        <li>3. 위약금 면제 규정 적용 요청</li>
+                        <li>4. 만약 거부 시 과기정통부 또는 소비자분쟁조정위원회 신청</li>
+                      </ol>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -1413,132 +1758,150 @@ export default function ResponsePage() {
             </div>
           </motion.section>
 
-          {/* 8. 위약금 면제 논란 */}
+          {/* 8. 향후 계획 및 제도 개선 방안 */}
           <motion.section
             variants={fadeInUp}
             className="mb-12"
           >
             <div className="bg-white rounded-xl shadow-md p-6 md:p-8 border border-blue-100">
               <h2 className="text-2xl font-bold text-blue-900 mb-5 flex items-center gap-2">
-                <span className="bg-red-100 text-red-700 p-2 rounded-full">
+                <span className="bg-indigo-100 text-indigo-700 p-2 rounded-full">
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
                 </span>
-                위약금 면제 논란 및 정부 대응
+                향후 계획 및 제도 개선 방안
               </h2>
 
               <div className="text-slate-700 space-y-6">
                 <p className="leading-relaxed">
-                  SKT 해킹 사고 이후 가장 뜨거운 쟁점 중 하나는 고객들의 위약금 면제 요구와 이에 대한 정부 및 SKT의 대응입니다. 
-                  유출된 개인정보로 인한 불안감으로 통신사를 변경하려는 고객들이 증가하면서, 위약금 면제 여부가 핵심 이슈로 부상했습니다.
+                  과기정통부는 2025년 7월 4일 최종 조사결과 발표와 함께 향후 계획 및 제도 개선 방안을 제시했습니다. 
+                  이번 사고를 계기로 국가 사이버보안 체계 전반의 개편이 추진됩니다.
                 </p>
 
-                {/* 8.1 정부 대응 연기 */}
+                {/* 8.1 SK텔레콤 이행 점검 계획 */}
                 <div className="mt-8">
-                  <h3 className="text-xl font-bold text-purple-900 mb-3" id="penalty-exemption-controversy">정부 대응 연기 및 검토 상황 (2025.06.18)</h3>
+                  <h3 className="text-xl font-bold text-purple-900 mb-3" id="implementation-plan">SK텔레콤 이행 점검 계획</h3>
                   
                   <div className="pl-4 border-l-4 border-purple-200 py-1 space-y-5">
-                    <div className="bg-red-50 p-5 rounded-lg border border-red-100">
-                      <h4 className="font-semibold text-red-800 mb-3">과기정통부 판단 연기 검토</h4>
-                                             <p className="text-sm text-slate-700 leading-relaxed">
-                         2025년 6월 18일, 과학기술정보통신부가 SKT 해킹 사고에 대한 <strong className="text-red-700">위약금 면제 여부 판단을 6월 말을 넘겨 연기하는 방안을 검토 중</strong>이라고 밝혔습니다. 
-                         강도현 과기정통부 2차관은 최근 이훈기 더불어민주당 의원실에 &quot;민관합동조사단 최종 조사결과 발표 시 위약금 면제에 대한 입장 포함 여부를 검토 중&quot;이라고 답변했습니다.
-                       </p>
-                       <p className="text-sm text-slate-700 leading-relaxed mt-2">
-                         앞서 과기정통부는 &quot;조사단의 결과를 보고 위약금 면제 여부를 판단하겠다, 시간을 끌지 않겠다&quot;며 6월 말 발표를 예고했으나, 
-                         법적 복잡성과 경제적 파급효과를 고려해 신중한 접근을 하고 있는 것으로 보입니다.
-                       </p>
+                    <div className="bg-blue-50 p-5 rounded-lg border border-blue-100">
+                      <h4 className="font-semibold text-blue-800 mb-3">단계별 이행 계획</h4>
+                      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div className="bg-white p-4 rounded-lg border border-blue-200">
+                          <h5 className="font-medium text-blue-700 mb-2">1단계: 이행계획 제출</h5>
+                          <p className="text-sm text-slate-700">
+                            <strong>2025년 7월</strong><br/>
+                            재발방지 대책에 따른 구체적 이행계획 제출
+                          </p>
+                        </div>
+                        <div className="bg-white p-4 rounded-lg border border-blue-200">
+                          <h5 className="font-medium text-blue-700 mb-2">2단계: 이행 실시</h5>
+                          <p className="text-sm text-slate-700">
+                            <strong>2025년 8~10월</strong><br/>
+                            계정 보안 강화, 암호화, 거버넌스 강화 등 실시
+                          </p>
+                        </div>
+                        <div className="bg-white p-4 rounded-lg border border-blue-200">
+                          <h5 className="font-medium text-blue-700 mb-2">3단계: 이행 점검</h5>
+                          <p className="text-sm text-slate-700">
+                            <strong>2025년 11~12월</strong><br/>
+                            이행 여부 점검 및 보완사항 시정조치
+                          </p>
+                        </div>
+                      </div>
                     </div>
                     
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      <div className="bg-blue-50 p-5 rounded-lg border border-blue-100">
-                        <h4 className="font-semibold text-blue-800 mb-3">SKT 입장: 최대 7조원 손실 우려</h4>
-                                                 <p className="text-sm text-slate-700 leading-relaxed">
-                           유영상 SKT 대표는 위약금 면제 시 <strong className="text-blue-700">3년간 최대 7조원의 매출 손실</strong>이 예상된다며 
-                           사실상 어렵다는 입장을 표명했습니다. 그러나 &quot;과기부가 법률적 판단을 해 조치한다면 따를 수밖에 없다&quot;고 밝혀 
-                           최종 결정권이 정부에 있음을 인정했습니다.
-                         </p>
-                      </div>
-                      
-                      <div className="bg-orange-50 p-5 rounded-lg border border-orange-100">
-                        <h4 className="font-semibold text-orange-800 mb-3">정치권 압박: 과기부 책임론</h4>
-                                                 <p className="text-sm text-slate-700 leading-relaxed">
-                           정치권에서는 과기정통부가 SKT 이용약관을 승인한 만큼 제43조 제4항 
-                           <em>&quot;회사의 귀책 사유로 해지할 경우 위약금을 면제한다&quot;</em>는 조항이 이번 사태에 적용되는지 
-                           빠르게 판단해야 한다고 지적하고 있습니다.
-                         </p>
-                      </div>
+                    <div className="bg-yellow-50 p-5 rounded-lg border border-yellow-100">
+                      <h4 className="font-semibold text-yellow-800 mb-3">시정조치 계획</h4>
+                      <p className="text-sm text-slate-700 leading-relaxed">
+                        이행점검 결과 보완이 필요한 사항이 발생하는 경우 
+                        <strong className="text-yellow-700">정보통신망법 제48조의4에 따라 시정조치를 명령</strong>할 계획입니다. 
+                        이는 법적 강제력을 가진 조치로, 위반 시 처벌 대상이 됩니다.
+                      </p>
                     </div>
                   </div>
                 </div>
 
-                {/* 8.2 법적 쟁점 */}
+                {/* 8.2 국가 사이버보안 체계 개편 */}
                 <div className="mt-10">
-                  <h3 className="text-xl font-bold text-purple-900 mb-3" id="legal-issues">법적 쟁점 및 전문가 의견</h3>
+                  <h3 className="text-xl font-bold text-purple-900 mb-3" id="national-cybersecurity">국가 사이버보안 체계 개편</h3>
                   
                   <div className="pl-4 border-l-4 border-purple-200 py-1">
                     <div className="space-y-6">
-                      <div className="bg-yellow-50 p-5 rounded-lg border border-yellow-100">
-                        <h4 className="font-semibold text-yellow-800 mb-3">SKT 면책 조항의 해석</h4>
-                                                 <p className="text-sm text-slate-700 leading-relaxed">
-                           SKT 이용약관 제22조 제1항은 사이버 침해 사고 시 <strong className="text-yellow-700">&apos;선량한 관리자의 주의의무&apos;</strong>를 
-                           다한 경우 회사가 책임을 지지 않는다고 명시했습니다. 법령상 기준을 준수했을 때도 면책됩니다. 
-                           즉 SKT가 개인정보 유출을 막기 위한 기술적·관리적 보호조치를 하고 법상 의무사항을 모두 따랐다면 
-                           &apos;귀책 사유가 있다&apos;고 보기 어려울 수 있습니다.
-                         </p>
-                         <p className="text-sm text-slate-700 leading-relaxed mt-2">
-                           또한 &apos;회사 귀책 시 위약금 면제&apos; 조항도 주로 통신서비스 제공이 불가능한 경우에 적용돼 
-                           이번 사태와 연관성이 낮다는 지적도 있습니다.
-                         </p>
+                      <div className="bg-red-50 p-5 rounded-lg border border-red-100">
+                        <h4 className="font-semibold text-red-800 mb-3">위기 인식 및 개편 필요성</h4>
+                        <p className="text-sm text-slate-700 leading-relaxed">
+                          과기정통부는 <strong className="text-red-700">인공지능 시대 국가 사이버보안 역량을 강화하지 않으면 큰 피해가 우려</strong>되는 상황에서 
+                          SK텔레콤 침해사고를 계기로 <strong className="text-red-700">민간 분야 정보보호 전반의 체계를 개편</strong>할 계기가 되었다고 판단했습니다.
+                        </p>
+                        <p className="text-sm text-slate-700 leading-relaxed mt-2">
+                          유상임 과기정통부 장관은 &quot;다가올 인공지능 시대에는 사이버위협이 인공지능과 결합하여 더욱 지능화, 정교화될 것&quot;이라며 
+                          &quot;정부는 사이버 위협 예방부터 사고 대응까지 전반적인 보안 체계를 개편하여 안전하고 신뢰받는 인공지능 강국으로 도약할 수 있도록 지원하겠다&quot;고 밝혔습니다.
+                        </p>
                       </div>
                       
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div className="bg-gray-50 p-5 rounded-lg border border-gray-100">
-                          <h4 className="font-semibold text-gray-800 mb-3">정부 개입 한계론</h4>
-                                                     <p className="text-sm text-slate-700 leading-relaxed">
-                             한 대형로펌 변호사는 &quot;이용약관은 기업과 이용자 간의 계약&quot;이라며 
-                             &quot;과기정통부가 이용약관을 신고받긴 하지만 법에 명시적 근거가 없다면 사인 간의 계약에 관여하는 건 쉽지 않다&quot;고 말했습니다. 
-                             대신 &quot;소비자가 위약금을 낸 후 SKT를 상대로 위약금 반환청구 소송을 하는 것이 적절하다&quot;고 제안했습니다.
-                           </p>
+                        <div className="bg-green-50 p-5 rounded-lg border border-green-100">
+                          <h4 className="font-semibold text-green-800 mb-3">통신망 보안 법제도 개선</h4>
+                          <p className="text-sm text-slate-700 leading-relaxed">
+                            <strong className="text-green-700">국민, 산업에 미치는 영향이 큰 통신망을 안전하게 보호</strong>하기 위한 
+                            별도의 법제도 방안을 마련할 계획입니다.
+                          </p>
+                          <ul className="text-sm text-slate-700 list-disc pl-5 space-y-1 mt-2">
+                            <li>통신망 전용 보안 규정 신설</li>
+                            <li>통신사 보안 의무 강화</li>
+                            <li>침해사고 시 대응 절차 개선</li>
+                            <li>정기 보안 점검 의무화</li>
+                          </ul>
                         </div>
                         
-                        <div className="bg-green-50 p-5 rounded-lg border border-green-100">
-                          <h4 className="font-semibold text-green-800 mb-3">정부 개입 가능론</h4>
-                                                     <p className="text-sm text-slate-700 leading-relaxed">
-                             김진욱 법무법인 주원 변호사는 &quot;정부가 &apos;위약금을 받지 말라&apos;고 강제하는 건 어렵지만 
-                             약관이 이용자의 권리행사를 부당하게 막는다고 판단해 <strong className="text-green-700">약관 개정에 대한 시정조치</strong>를 내릴 수 있다&quot;고 말했습니다.
-                           </p>
-                           <p className="text-sm text-slate-700 leading-relaxed mt-2">
-                             구태언 법무법인 린 테크그룹 총괄 변호사도 &quot;해당 약관의 부당성에 대한 유권해석을 내리거나 
-                             통신사의 자율적인 시정을 유도하고, 필요시 공정거래위원회 등과 협력해 문제해결을 모색하는 등 
-                             법리적 한계와 정책적 책임을 동시에 고려해야 한다&quot;고 강조했습니다.
-                           </p>
+                        <div className="bg-blue-50 p-5 rounded-lg border border-blue-100">
+                          <h4 className="font-semibold text-blue-800 mb-3">민간 정보보호 투자 확대</h4>
+                          <p className="text-sm text-slate-700 leading-relaxed">
+                            <strong className="text-blue-700">민간 정보보호 투자 확대 및 정보보호 관리체계(거버넌스) 강화</strong>를 위한 
+                            제도 개선 방안을 마련할 계획입니다.
+                          </p>
+                          <ul className="text-sm text-slate-700 list-disc pl-5 space-y-1 mt-2">
+                            <li>정보보호 투자 세제 혜택 확대</li>
+                            <li>CISO 의무 선임 확대</li>
+                            <li>정보보호 인력 양성 지원</li>
+                            <li>보안 기술 개발 투자 확대</li>
+                          </ul>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
 
-                {/* 8.3 향후 전망 */}
+                {/* 8.3 국회 협력 방안 */}
                 <div className="mt-10">
-                  <h3 className="text-xl font-bold text-purple-900 mb-3" id="future-outlook">향후 전망 및 과제</h3>
+                  <h3 className="text-xl font-bold text-purple-900 mb-3" id="parliament-cooperation">국회 협력 방안</h3>
                   
                   <div className="pl-4 border-l-4 border-purple-200 py-1">
                     <div className="bg-indigo-50 rounded-lg border border-indigo-100 p-5">
-                      <h4 className="text-lg font-semibold text-indigo-800 mb-3">정부의 딜레마와 과제</h4>
+                      <h4 className="text-lg font-semibold text-indigo-800 mb-3">국회 과방위 전담조직(TF) 협력</h4>
                       <p className="text-sm text-slate-700 leading-relaxed">
-                        과기정통부는 과거 사이버 침해 사고 발생 시 위약금 면제 시정조치를 내린 사례가 없는 데다, 
-                        법조계 의견도 엇갈려 신중한 접근을 하고 있습니다. 위약금 면제를 강제할 경우 
-                        <strong className="text-indigo-700">민간 계약에 대한 정부 개입</strong>이라는 비판을, 
-                        면제하지 않을 경우 <strong className="text-indigo-700">소비자 보호 의무 소홀</strong>이라는 비판을 받을 수 있는 상황입니다.
+                        과기정통부는 제도 개선 방안을 <strong className="text-indigo-700">국회 과학기술정보방송통신위원회 내 
+                        SK텔레콤 해킹사고 관련 전담조직(TF)과 논의</strong>를 거쳐 마련할 계획입니다.
                       </p>
-                                             <p className="text-sm text-slate-700 leading-relaxed mt-2">
-                         과기정통부 관계자는 &quot;조사가 마무리돼야 다음 단계의 판단이 가능해 조사에 집중하고 있다&quot;고 답했으나, 
-                         정치권과 시민사회의 압박이 지속되고 있어 조만간 명확한 입장 표명이 불가피할 것으로 보입니다.
-                       </p>
-                      <p className="text-sm text-slate-700 leading-relaxed mt-2">
-                        이번 사태를 계기로 통신사 개인정보 유출 시 위약금 처리에 대한 명확한 법적 기준 마련과 
-                        소비자 보호 체계 강화가 필요하다는 목소리가 높아지고 있습니다.
-                      </p>
+                      <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                          <h5 className="font-medium text-indigo-700 mb-2">협력 분야</h5>
+                          <ul className="text-sm text-slate-700 list-disc pl-5 space-y-1">
+                            <li>통신망 보안 법제도 개선</li>
+                            <li>민간 정보보호 투자 확대 방안</li>
+                            <li>거버넌스 강화 제도</li>
+                            <li>침해사고 대응 체계 개선</li>
+                          </ul>
+                        </div>
+                        <div>
+                          <h5 className="font-medium text-indigo-700 mb-2">기대 효과</h5>
+                          <ul className="text-sm text-slate-700 list-disc pl-5 space-y-1">
+                            <li>입법 과정의 신속성 확보</li>
+                            <li>정책 실효성 제고</li>
+                            <li>사회적 합의 도출</li>
+                            <li>장기적 제도 안정성 확보</li>
+                          </ul>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>

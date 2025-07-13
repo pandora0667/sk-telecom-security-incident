@@ -3,65 +3,12 @@
 import Link from 'next/link';
 import { Menu, X } from 'lucide-react';
 import Image from 'next/image';
-import { useState, useEffect, useRef } from 'react';
-import { usePathname } from 'next/navigation';
-
-const navItems = [
-  { href: '/', label: '메인' },
-  { href: '/timeline', label: '타임라인' },
-  { href: '/analysis', label: '침해 분석' },
-  { href: '/response', label: '대응 조치' },
-  { href: '/press', label: '사회적 반응' },
-  { href: '/classaction', label: '집단소송' },
-  { href: '/similar-cases', label: '유사 해킹사례' },
-  { href: '/faq', label: 'FAQ' },
-];
+import { IMAGE_SIZES, NAV_ITEMS } from '@/lib/constants';
+import { getNavLinkStyle, getMobileNavLinkStyle } from '@/lib/style-utils';
+import { useNavigation } from '@/hooks/useNavigation';
 
 export function Header() {
-  const [open, setOpen] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
-  const pathname = usePathname();
-  const menuRef = useRef<HTMLDivElement>(null);
-  const buttonRef = useRef<HTMLButtonElement>(null);
-
-  // 화면 크기 변경 감지
-  useEffect(() => {
-    const checkScreenSize = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-    
-    // 초기 실행
-    checkScreenSize();
-    
-    // 리사이즈 이벤트 리스너 등록
-    window.addEventListener('resize', checkScreenSize);
-    
-    // 컴포넌트 언마운트 시 이벤트 리스너 제거
-    return () => window.removeEventListener('resize', checkScreenSize);
-  }, []);
-
-  // 드롭다운 외부 클릭 시 닫기
-  useEffect(() => {
-    if (!open) return;
-    
-    const handleOutsideClick = (e: MouseEvent) => {
-      // 메뉴 버튼이나 메뉴 영역 내부 클릭이 아닐 경우에만 닫기
-      if (
-        menuRef.current && 
-        buttonRef.current && 
-        !menuRef.current.contains(e.target as Node) && 
-        !buttonRef.current.contains(e.target as Node)
-      ) {
-        setOpen(false);
-      }
-    };
-    
-    document.addEventListener('click', handleOutsideClick);
-    
-    return () => {
-      document.removeEventListener('click', handleOutsideClick);
-    };
-  }, [open]);
+  const { open, isMobile, pathname, menuRef, buttonRef, toggleMenu, closeMenu } = useNavigation();
 
   return (
     <header className="w-full flex justify-center py-4 bg-transparent">
@@ -73,8 +20,8 @@ export function Header() {
               <Image 
                 src="/skt-logo/BI_T.png" 
                 alt="SK텔레콤 T 로고" 
-                width={40}
-                height={40}
+                width={IMAGE_SIZES.LOGO_MEDIUM.width}
+                height={IMAGE_SIZES.LOGO_MEDIUM.height}
                 priority
                 className="object-contain"
                 style={{ objectPosition: 'center center' }}
@@ -88,14 +35,11 @@ export function Header() {
         
         {/* 네비게이션 - 데스크탑 (오른쪽 정렬) */}
         <nav className="hidden md:flex flex-1 justify-end gap-1 lg:gap-4 text-xs lg:text-base font-medium overflow-x-auto scrollbar-hide whitespace-nowrap">
-          {navItems.map((item) => (
+          {NAV_ITEMS.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className={`relative px-1.5 lg:px-2 py-1 font-medium transition-colors
-                hover:text-fuchsia-700
-                ${pathname === item.href ? 'text-fuchsia-700' : 'text-muted-foreground'}
-              `}
+              className={getNavLinkStyle(pathname === item.href)}
             >
               {item.label}
               {pathname === item.href && (
@@ -110,10 +54,7 @@ export function Header() {
           <button
             ref={buttonRef}
             className="p-2 rounded-lg hover:bg-fuchsia-50 transition-colors"
-            onClick={(e) => {
-              e.stopPropagation(); // 이벤트 버블링 방지
-              setOpen((v) => !v);
-            }}
+            onClick={toggleMenu}
             aria-label={open ? "메뉴 닫기" : "메뉴 열기"}
           >
             {open ? (
@@ -129,23 +70,19 @@ export function Header() {
       {open && isMobile && (
         <div 
           className="fixed inset-0 bg-black/20 z-40"
-          onClick={() => setOpen(false)}
+          onClick={closeMenu}
         >
           <div 
             ref={menuRef}
             className="absolute top-20 left-0 right-0 mx-auto w-[90%] max-w-md bg-white rounded-xl shadow-lg border py-3 px-4 z-50 flex flex-col gap-2 animate-fade-in"
             onClick={(e) => e.stopPropagation()} // 내부 클릭 시 버블링 방지
           >
-            {navItems.map((item) => (
+            {NAV_ITEMS.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className={`px-3 py-2 rounded-md font-medium text-base transition-colors ${
-                  pathname === item.href 
-                    ? 'text-fuchsia-700 bg-fuchsia-50' 
-                    : 'text-muted-foreground hover:bg-fuchsia-50 hover:text-fuchsia-700'
-                }`}
-                onClick={() => setOpen(false)}
+                className={getMobileNavLinkStyle(pathname === item.href)}
+                onClick={closeMenu}
               >
                 {item.label}
               </Link>

@@ -1,5 +1,7 @@
 import { ShieldAlert, Sparkles } from "lucide-react";
 import { motion } from "framer-motion";
+import { heroAnimations } from "@/lib/animations";
+import { getResponsiveTextStyle } from "@/lib/style-utils";
 
 export function HeroSection() {
   return (
@@ -24,34 +26,34 @@ export function HeroSection() {
       <div className="relative z-10 flex flex-col items-center text-center w-full max-w-2xl mx-auto px-4">
         <motion.span 
           className="mb-4 flex items-center gap-2 px-4 py-1 rounded-full bg-primary/10 text-primary font-medium text-sm shadow-sm mx-auto"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
+          variants={heroAnimations.badge}
+          initial="hidden"
+          animate="show"
         >
           <ShieldAlert className="w-5 h-5" />
           SKT 유심 해킹 사건
         </motion.span>
         <motion.h1 
-          className="text-3xl sm:text-4xl md:text-6xl font-extrabold text-center tracking-tight mb-4 bg-gradient-to-r from-blue-700 via-purple-600 to-fuchsia-500 text-transparent bg-clip-text drop-shadow-lg"
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
+          className={`${getResponsiveTextStyle('hero')} font-extrabold text-center tracking-tight mb-4 bg-gradient-to-r from-blue-700 via-purple-600 to-fuchsia-500 text-transparent bg-clip-text drop-shadow-lg`}
+          variants={heroAnimations.title}
+          initial="hidden"
+          animate="show"
         >
           SK텔레콤 유심 해킹 사건<br className="hidden xs:block sm:hidden" /> 종합 분석
         </motion.h1>
         <motion.p 
-          className="text-base sm:text-lg md:text-2xl text-center text-muted-foreground max-w-2xl mb-6 mx-auto"
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.6 }}
+          className={`${getResponsiveTextStyle('xl')} text-center text-muted-foreground max-w-2xl mb-6 mx-auto`}
+          variants={heroAnimations.subtitle}
+          initial="hidden"
+          animate="show"
         >
           전세계적으로 전례없는 대규모 유심 해킹 사건의<br className="hidden xs:block sm:hidden" /> 핵심 요약과 분석
         </motion.p>
         <motion.div 
           className="flex gap-2 justify-center"
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5, delay: 0.8 }}
+          variants={heroAnimations.status}
+          initial="hidden"
+          animate="show"
         >
           <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-fuchsia-100 text-fuchsia-700 text-xs font-semibold">
             <Sparkles className="w-4 h-4" /> 현재 진행중인 사건 지속 업데이트

@@ -5,36 +5,13 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import BPFDoorDiagram from "./BPFDoorDiagram";
-import BPFDoorSource from "./BPFDoorSource";
+import { BPFDoorDiagram, BPFDoorSource } from "@/domains/analysis";
 import { useState } from "react";
 import ImageViewer from "@/components/ui/image-viewer";
 import Script from "next/script";
+import { staggerContainer, fadeInUp } from "@/lib/animations";
 
-// 애니메이션 변수
-const staggerContainer = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.2,
-      delayChildren: 0.3,
-    },
-  },
-};
-
-const fadeInUp = {
-  hidden: { y: 30, opacity: 0 },
-  show: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      type: "spring",
-      damping: 15,
-      stiffness: 100,
-    },
-  },
-};
+// 애니메이션 설정을 lib/animations.ts에서 import해서 사용
 
 export default function AnalysisPage() {
   const [showBPFDoorSource, setShowBPFDoorSource] = useState(false);

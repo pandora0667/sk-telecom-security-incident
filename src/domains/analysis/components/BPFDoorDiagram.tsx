@@ -13,4 +13,4 @@ const BPFDoorDiagram: React.FC = () => {
   );
 };
 
-export default BPFDoorDiagram;
+export default BPFDoorDiagram; 

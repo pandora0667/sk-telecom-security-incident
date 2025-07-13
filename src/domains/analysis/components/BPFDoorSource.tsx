@@ -590,7 +590,7 @@ setsockopt(sock, SOL_SOCKET, SO_ATTACH_FILTER, &filter, sizeof(filter));`}
           <p className="text-xs text-slate-700 leading-relaxed mt-2">
             일반적인 백도어는 C2서버와 주기적 통신하거나 특정 포트를 여는 반면,
             BPFDoor는 네트워크상 완전히 숨겨진 채 오직 cBPF(Classic BPF)를
-            사용한다는 것입니다. 이는 합법적인 커널 기능을 악용하여 비정상
+            사용한다는 것입니다. 이는 합법적인 커널 기능을 남용하여 비정상
             트래픽만 골라내는 기법입니다. 이 아이디어는 과거 &quot;포트
             노킹(port knocking)&quot; 개념과 유사하지만, 단순히 포트 시퀀스를
             기다리는 것이 아니라 패킷 내용까지 검사하는 고도화된 형태입니다.
@@ -641,4 +641,4 @@ and ...
       </div>
     </div>
   );
-}
+} 

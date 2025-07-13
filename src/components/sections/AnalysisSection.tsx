@@ -1,5 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { securityInfoData } from "@/lib/data/security-info";
+import { getSeverityStyle } from "@/lib/style-utils";
 
 export function AnalysisSection() {
   return (
@@ -11,12 +12,7 @@ export function AnalysisSection() {
             <CardHeader>
               <CardTitle className="flex items-center justify-between">
                 <span>{info.title}</span>
-                <span className={`text-xs px-2 py-1 rounded-full ${
-                  info.severity === 'critical' ? 'bg-red-100 text-red-700' :
-                  info.severity === 'high' ? 'bg-orange-100 text-orange-700' :
-                  info.severity === 'medium' ? 'bg-yellow-100 text-yellow-700' :
-                  'bg-green-100 text-green-700'
-                }`}>
+                <span className={`text-xs px-2 py-1 rounded-full ${getSeverityStyle(info.severity)}`}>
                   {info.severity}
                 </span>
               </CardTitle>
