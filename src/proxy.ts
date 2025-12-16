@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 
-export function middleware() {
+export function proxy() {
   // 응답 객체 생성
   const response = NextResponse.next();
 
@@ -24,7 +24,8 @@ export function middleware() {
   return response;
 }
 
-// 미들웨어가 적용될 경로 설정
+// 프록시가 적용될 경로 설정
 export const config = {
   matcher: '/:path*',
-}; 
+};
+
