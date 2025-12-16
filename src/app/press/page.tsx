@@ -5,31 +5,7 @@ import { motion } from "framer-motion";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import Script from "next/script";
-
-// 애니메이션 변수
-const staggerContainer = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.2,
-      delayChildren: 0.3,
-    },
-  },
-};
-
-const fadeInUp = {
-  hidden: { y: 30, opacity: 0 },
-  show: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      type: "spring",
-      damping: 15,
-      stiffness: 100,
-    },
-  },
-};
+import { staggerContainer, fadeInUp } from "@/lib/animations";
 
 export default function PressPage() {
   return (

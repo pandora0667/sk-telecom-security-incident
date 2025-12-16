@@ -6,31 +6,7 @@ import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import Image from 'next/image';
 import Script from 'next/script';
-
-// 애니메이션 변수
-const staggerContainer = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.2,
-      delayChildren: 0.3,
-    }
-  }
-};
-
-const fadeInUp = {
-  hidden: { y: 30, opacity: 0 },
-  show: { 
-    y: 0, 
-    opacity: 1,
-    transition: {
-      type: "spring",
-      damping: 15,
-      stiffness: 100
-    }
-  }
-};
+import { staggerContainer, fadeInUp } from '@/lib/animations';
 
 export default function ResponsePage() {
   return (
@@ -339,7 +315,7 @@ export default function ResponsePage() {
               </h2>
 
               <div className="text-slate-700 space-y-8">
-                <div className="bg-gradient-to-r from-red-50 to-orange-50 rounded-lg border border-red-200 p-6">
+                <div className="bg-linear-to-r from-red-50 to-orange-50 rounded-lg border border-red-200 p-6">
                   <h3 className="text-xl font-bold text-red-900 mb-4">침해사고 타임라인 (확정)</h3>
                   
                   <div className="relative">
@@ -347,7 +323,7 @@ export default function ResponsePage() {
                     
                     <div className="space-y-6">
                       <div className="flex items-start space-x-4">
-                        <div className="flex-shrink-0 w-8 h-8 bg-red-100 rounded-full flex items-center justify-center">
+                        <div className="shrink-0 w-8 h-8 bg-red-100 rounded-full flex items-center justify-center">
                           <span className="text-red-700 font-bold text-sm">1</span>
                         </div>
                         <div>
@@ -360,7 +336,7 @@ export default function ResponsePage() {
                       </div>
                       
                       <div className="flex items-start space-x-4">
-                        <div className="flex-shrink-0 w-8 h-8 bg-red-100 rounded-full flex items-center justify-center">
+                        <div className="shrink-0 w-8 h-8 bg-red-100 rounded-full flex items-center justify-center">
                           <span className="text-red-700 font-bold text-sm">2</span>
                         </div>
                         <div>
@@ -373,7 +349,7 @@ export default function ResponsePage() {
                       </div>
                       
                       <div className="flex items-start space-x-4">
-                        <div className="flex-shrink-0 w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center">
+                        <div className="shrink-0 w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center">
                           <span className="text-orange-700 font-bold text-sm">3</span>
                         </div>
                         <div>
@@ -387,7 +363,7 @@ export default function ResponsePage() {
                       </div>
                       
                       <div className="flex items-start space-x-4">
-                        <div className="flex-shrink-0 w-8 h-8 bg-red-100 rounded-full flex items-center justify-center">
+                        <div className="shrink-0 w-8 h-8 bg-red-100 rounded-full flex items-center justify-center">
                           <span className="text-red-700 font-bold text-sm">4</span>
                         </div>
                         <div>
@@ -400,7 +376,7 @@ export default function ResponsePage() {
                       </div>
                       
                       <div className="flex items-start space-x-4">
-                        <div className="flex-shrink-0 w-8 h-8 bg-red-100 rounded-full flex items-center justify-center">
+                        <div className="shrink-0 w-8 h-8 bg-red-100 rounded-full flex items-center justify-center">
                           <span className="text-red-700 font-bold text-sm">5</span>
                         </div>
                         <div>
@@ -1914,7 +1890,7 @@ export default function ResponsePage() {
             variants={fadeInUp}
             className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10"
           >
-            <Link href="/timeline" className="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white p-5 rounded-xl shadow-md flex items-center justify-between transition-colors">
+            <Link href="/timeline" className="bg-linear-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white p-5 rounded-xl shadow-md flex items-center justify-between transition-colors">
               <div>
                 <span className="text-sm text-blue-100">사건 연대기</span>
                 <h3 className="text-xl font-semibold">전체 타임라인 보기</h3>
@@ -1922,7 +1898,7 @@ export default function ResponsePage() {
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
             </Link>
             
-            <Link href="/analysis" className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white p-5 rounded-xl shadow-md flex items-center justify-between transition-colors">
+            <Link href="/analysis" className="bg-linear-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white p-5 rounded-xl shadow-md flex items-center justify-between transition-colors">
               <div>
                 <span className="text-sm text-green-100">기술적 분석</span>
                 <h3 className="text-xl font-semibold">해킹 상세 분석</h3>

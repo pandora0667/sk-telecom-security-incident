@@ -10,31 +10,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { cn } from "@/lib/utils";
 import Script from "next/script";
-
-// 애니메이션 변수
-const staggerContainer = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.1,
-      delayChildren: 0.2,
-    }
-  }
-};
-
-const fadeInUp = {
-  hidden: { y: 20, opacity: 0 },
-  show: { 
-    y: 0, 
-    opacity: 1,
-    transition: {
-      type: "spring",
-      damping: 15,
-      stiffness: 100
-    }
-  }
-};
+import { staggerContainer, fadeInUp } from '@/lib/animations';
 
 export default function TimelinePage() {
   // 타임라인 데이터를 날짜별로 정렬 (최신 순)

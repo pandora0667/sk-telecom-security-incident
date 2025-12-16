@@ -1,7 +1,8 @@
+import { Variants } from 'framer-motion';
 import { ANIMATION_DELAYS, ANIMATION_DURATION, ANIMATION_STAGGER } from './constants';
 
 // 기본 컨테이너 애니메이션
-export const staggerContainer = {
+export const staggerContainer: Variants = {
   hidden: { opacity: 0 },
   show: {
     opacity: 1,
@@ -13,13 +14,13 @@ export const staggerContainer = {
 };
 
 // 아래에서 위로 페이드인 애니메이션
-export const fadeInUp = {
+export const fadeInUp: Variants = {
   hidden: { y: 30, opacity: 0 },
   show: {
     y: 0,
     opacity: 1,
     transition: {
-      type: "spring",
+      type: "spring" as const,
       damping: 15,
       stiffness: 100,
     },
@@ -27,13 +28,13 @@ export const fadeInUp = {
 };
 
 // 왼쪽에서 오른쪽으로 슬라이드 애니메이션
-export const slideInLeft = {
+export const slideInLeft: Variants = {
   hidden: { x: -30, opacity: 0 },
   show: {
     x: 0,
     opacity: 1,
     transition: {
-      type: "spring",
+      type: "spring" as const,
       damping: 15,
       stiffness: 100,
     },
@@ -41,13 +42,13 @@ export const slideInLeft = {
 };
 
 // 오른쪽에서 왼쪽으로 슬라이드 애니메이션
-export const slideInRight = {
+export const slideInRight: Variants = {
   hidden: { x: 30, opacity: 0 },
   show: {
     x: 0,
     opacity: 1,
     transition: {
-      type: "spring",
+      type: "spring" as const,
       damping: 15,
       stiffness: 100,
     },
@@ -55,13 +56,13 @@ export const slideInRight = {
 };
 
 // 스케일 애니메이션
-export const scaleIn = {
+export const scaleIn: Variants = {
   hidden: { scale: 0.8, opacity: 0 },
   show: {
     scale: 1,
     opacity: 1,
     transition: {
-      type: "spring",
+      type: "spring" as const,
       damping: 15,
       stiffness: 100,
     },
